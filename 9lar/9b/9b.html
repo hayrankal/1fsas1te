@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalıcı Fotoğraf Galerisi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalıcı Fotoğraf Galerisi</h1>
+        <div class="input-area">
+            <h2>Fotoğraf Ekle</h2>
+            <input type="text" id="photo-path" placeholder="Fotoğraf dosya yolu (örn: images/foto.jpg veya ./foto.jpg)">
+            <div id="error-message" class="error"></div>
+            <button id="add-photo">Fotoğraf Ekle</button>
+            <button id="save-gallery" class="delete">Galeriyi Kaydet</button>
+        </div>
+        <div class="gallery" id="photo-gallery">
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\30-Tuna_Bilal_Altun.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\30-Tuna_Bilal_Altun.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\137-dila_tuana_celep.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\137-dila_tuana_celep.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\271-vedat_guneytepe.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\271-vedat_guneytepe.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\364-Naciye_Tuba_Abak.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\364-Naciye_Tuba_Abak.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\395-Sudenaz_Sevim.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\395-Sudenaz_Sevim.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\407-Senem_Irmak_Yildiz.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\407-Senem_Irmak_Yildiz.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\448-Hazar_Alaoglu.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\448-Hazar_Alaoglu.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\512-Duru_Aksoy.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\512-Duru_Aksoy.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\535-Zeliha_Şahin.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\535-Zeliha_Şahin.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\542-İrem_Baykara.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\542-İrem_Baykara.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\574-Rabia_Çelik.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\574-Rabia_Çelik.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\575-Mustafa_Emir_Yesilyuz.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\575-Mustafa_Emir_Yesilyuz.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\598-Tuana_Alphan.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\598-Tuana_Alphan.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\600-Burak_ERAVCI.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\600-Burak_ERAVCI.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\610-Bugra_Saritas.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\610-Bugra_Saritas.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\612-Zeynep_Su_Yaman.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\612-Zeynep_Su_Yaman.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\651-Esin_Leyla_Gok.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\651-Esin_Leyla_Gok.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\674-Burak_KOÇYİĞİT.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\674-Burak_KOÇYİĞİT.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\691-Elif_Gunebakan.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\691-Elif_Gunebakan.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\710-Beyzanur_Şenyasa.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\710-Beyzanur_Şenyasa.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\732-Hayrunnisa_Ergun.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\732-Hayrunnisa_Ergun.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\799-İbrahim_Yigit_Kayali.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\799-İbrahim_Yigit_Kayali.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\808-Eyup_Guloglu.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\808-Eyup_Guloglu.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\811-Yaren__Guzelyurt.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\811-Yaren__Guzelyurt.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\814-Sumeyye_Donmez.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\814-Sumeyye_Donmez.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\816-Muhammet_Kerem.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\816-Muhammet_Kerem.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\820-İrem_Su_Basarslan.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\820-İrem_Su_Basarslan.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\831-Ömer_Karakas.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\831-Ömer_Karakas.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\832-Eylul_Çaliskan.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\832-Eylul_Çaliskan.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\833-Mehmet_Şehmus_Kaya.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\833-Mehmet_Şehmus_Kaya.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\836-Orcun_Muhammed_Üstunbas.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\836-Orcun_Muhammed_Üstunbas.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\843-Baturay_Talha_Tekin.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\843-Baturay_Talha_Tekin.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\847-ali_can_sagdic.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\847-ali_can_sagdic.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\848-Ecrin_Nur_Yildirim.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\848-Ecrin_Nur_Yildirim.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\916-Emre_Balkan.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9b\916-Emre_Balkan.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const photoPaths = ["C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\30-Tuna_Bilal_Altun.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\137-dila_tuana_celep.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\271-vedat_guneytepe.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\364-Naciye_Tuba_Abak.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\395-Sudenaz_Sevim.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\407-Senem_Irmak_Yildiz.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\448-Hazar_Alaoglu.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\512-Duru_Aksoy.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\535-Zeliha_Şahin.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\542-İrem_Baykara.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\574-Rabia_Çelik.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\575-Mustafa_Emir_Yesilyuz.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\598-Tuana_Alphan.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\600-Burak_ERAVCI.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\610-Bugra_Saritas.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\612-Zeynep_Su_Yaman.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\651-Esin_Leyla_Gok.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\674-Burak_KOÇYİĞİT.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\691-Elif_Gunebakan.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\710-Beyzanur_Şenyasa.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\732-Hayrunnisa_Ergun.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\799-İbrahim_Yigit_Kayali.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\808-Eyup_Guloglu.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\811-Yaren__Guzelyurt.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\814-Sumeyye_Donmez.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\816-Muhammet_Kerem.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\820-İrem_Su_Basarslan.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\831-Ömer_Karakas.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\832-Eylul_Çaliskan.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\833-Mehmet_Şehmus_Kaya.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\836-Orcun_Muhammed_Üstunbas.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\843-Baturay_Talha_Tekin.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\847-ali_can_sagdic.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\848-Ecrin_Nur_Yildirim.JPG","C:\\Users\\tr4st\\Desktop\\Başlıyoruz\\9lar\\9b\\916-Emre_Balkan.JPG"];
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById("photo-gallery");
+            photoPaths.forEach(path => {
+                const photoCard = document.createElement("div");
+                photoCard.className = "photo-card";
+                photoCard.innerHTML = '<img src="' + path + '" alt="Galeri fotoğrafı"><div class="photo-info"><div class="photo-path">' + path + '</div><button class="delete-btn" onclick="this.parentNode.parentNode.remove()">×</button></div>';
+                gallery.appendChild(photoCard);
+            });
+        });
+    </script>
+</body>
+</html>
