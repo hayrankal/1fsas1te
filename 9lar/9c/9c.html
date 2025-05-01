@@ -9,15 +9,6 @@
 <body>
     <div class="container">
         <h1>Kalıcı Fotoğraf Galerisi</h1>
-        
-        <div class="input-area">
-            <h2>Fotoğraf Ekle</h2>
-            <input type="text" id="photo-path" placeholder="Fotoğraf dosya yolu (örn: images/foto.jpg veya ./foto.jpg)">
-            <div id="error-message" class="error"></div>
-            <button id="add-photo">Fotoğraf Ekle</button>
-            <button id="save-gallery" class="delete">Galeriyi Kaydet</button>
-        </div>
-        
         <div class="gallery" id="photo-gallery">
             <div class="photo-card">
                 <img src="IMG_0906.JPG" alt="Galeri fotoğrafı">
@@ -276,11 +267,20 @@
                 <div class="photo-info">
                     <div class="photo-path">IMG_0947.JPG</div>
                     <button class="delete-btn">×</button>
-                </div>
             </div>
         </div>
     </div>
-
-    <script src="app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById("photo-gallery");
+            
+            photoPaths.forEach(path => {
+                const photoCard = document.createElement("div");
+                photoCard.className = "photo-card";
+                photoCard.innerHTML = '<img src="' + path + '" alt="Galeri fotoğrafı"><div class="photo-info"><div class="photo-path">' + path + '</div><button class="delete-btn" onclick="this.parentNode.parentNode.remove()">×</button></div>';
+                gallery.appendChild(photoCard);
+            });
+        });
+    </script>
 </body>
 </html>
