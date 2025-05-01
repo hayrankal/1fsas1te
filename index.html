@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Sayfası</title>
+    <title>Güvenli Giriş Paneli</title>
     <style>
-        body {
+        :root {
+            --primary-color: #2196F3;
+            --error-color: #f44336;
+            --success-color: #4CAF50;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
+        }
+        
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
             overflow: hidden;
+            background: #000;
         }
 
         .video-background {
@@ -32,112 +43,183 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            opacity: 0.8;
+            opacity: 0.7;
             object-fit: cover;
+            filter: brightness(0.6);
         }
 
-        .password-modal {
+        .login-container {
             display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .auth-box {
+            background: rgba(15, 15, 20, 0.85);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(10px);
+            max-width: 420px;
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: all 0.5s ease;
         }
 
-        .password-box {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 30px;
-            border-radius: 15px;
+        .auth-box:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .logo {
             text-align: center;
-            box-shadow: 0 0 30px rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            width: 350px;
-            max-width: 90%;
+            margin-bottom: 30px;
         }
 
-        .password-input {
-            padding: 15px;
-            font-size: 16px;
-            margin: 20px 0;
-            width: 80%;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.2);
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo h1 {
             color: white;
-            outline: none;
-            transition: all 0.3s;
-        }
-
-        .password-input:focus {
-            background: rgba(255,255,255,0.3);
-            box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
-        }
-
-        .password-input::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
-
-        h2 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 24px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-
-        .submit-btn {
-            background: rgba(33, 150, 243, 0.9);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s;
-            width: 80%;
-            font-weight: bold;
-        }
-
-        .submit-btn:hover {
-            background: rgba(25, 118, 210, 0.9);
-            transform: translateY(-2px);
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .security-info {
-            color: rgba(255,255,255,0.7);
-            font-size: 12px;
             margin-top: 15px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .security-layer {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .security-question {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .error-shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translateX(-2px); }
+            20%, 80% { transform: translateX(3px); }
+            30%, 50%, 70% { transform: translateX(-5px); }
+            40%, 60% { transform: translateX(5px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status-message {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            text-align: center;
+            margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
         }
 
-        .security-info i {
-            color: rgba(33, 150, 243, 0.9);
+        .status-message i {
+            color: var(--primary-color);
         }
 
+        .attempts-warning {
+            color: rgba(255, 165, 0, 0.8);
+            font-size: 13px;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+        }
+
+        /* Responsive tasarım */
         @media (max-width: 480px) {
-            .password-box {
-                padding: 20px;
+            .auth-box {
+                padding: 30px 20px;
+                margin: 0 15px;
             }
             
-            .password-input {
-                width: 90%;
+            .logo h1 {
+                font-size: 1.5rem;
             }
             
-            .submit-btn {
-                width: 90%;
+            .input-field, .btn {
+                padding: 12px 14px;
             }
         }
     </style>
@@ -150,95 +232,229 @@
         </video>
     </div>
 
-    <div class="password-modal" id="passwordModal">
-        <div class="password-box">
-            <h2>Güvenli Giriş</h2>
-            <input type="password" id="password" class="password-input" 
-                   placeholder="Güvenlik şifresini girin">
-            <br>
-            <button class="submit-btn" onclick="checkPassword()">Giriş Yap</button>
-            <div class="security-info">
+    <div class="login-container">
+        <div class="auth-box" id="authBox">
+            <div class="logo">
+                <img src="https://i.hizliresim.com/bfoty7k.gif" alt="Logo">
+                <h1>Güvenli Erişim</h1>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Giriş Şifresi</label>
+                <input type="password" id="password" class="input-field" 
+                       placeholder="••••••••" autocomplete="off">
+            </div>
+            
+            <button class="btn" onclick="checkPassword()">
+                <i class="fas fa-lock"></i> Giriş Yap
+            </button>
+            
+            <div class="attempts-warning" id="attemptsWarning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="attemptsText"></span>
+            </div>
+            
+            <div class="security-layer" id="securityLayer">
+                <div class="security-question" id="securityQuestion"></div>
+                
+                <div class="input-group">
+                    <label for="securityAnswer">Güvenlik Cevabı</label>
+                    <input type="text" id="securityAnswer" class="input-field" 
+                           placeholder="Cevabınızı girin" autocomplete="off">
+                </div>
+                
+                <button class="btn" onclick="checkSecurityAnswer()">
+                    <i class="fas fa-shield-alt"></i> Doğrula
+                </button>
+            </div>
+            
+            <div class="status-message">
                 <i class="fas fa-shield-alt"></i>
-                <span>Güvenli bağlantı - Girişler şifrelenmiştir</span>
+                <span>Güvenli bağlantı - Tüm veriler şifrelenmiştir</span>
             </div>
         </div>
     </div>
 
     <script>
-        // Doğru şifre (Bu değeri değiştirin)
-        const correctPassword = "2kiloam";
-        let failedAttempts = 0;
-        const maxAttempts = 5;
-        let blockedUntil = 0;
+        // Güvenlik konfigürasyonu
+        const securityConfig = {
+            password: "2kiloam", // Ana şifre
+            securityQuestions: [
+                {
+                    question: "Kimin saçı uzundur? (küçük harf | erkek)",
+                    answer: "haşim"
+                },
+                {
+                    question: "Kimin soyadı güldalıdır? (küçük harf)",
+                    answer: "arda"
+                },
+                {
+                    question: "Marketten ne çalındı?",
+                    answer: "kondom"
+                }
+            ],
+            maxAttempts: 5,
+            blockTime: 5 * 60 * 1000, // 5 dakika (milisaniye cinsinden)
+            sessionTimeout: 30 * 60 * 1000 // 30 dakika
+        };
 
+        // Oturum ve giriş denemesi bilgileri
+        let currentState = {
+            failedAttempts: 0,
+            blockedUntil: 0,
+            currentQuestionIndex: 0,
+            lastActivity: Date.now()
+        };
+
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', function() {
+            // Oturum kontrolü
+            checkSession();
+            
+            // Enter tuşu desteği
+            document.getElementById("password").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") checkPassword();
+            });
+            
+            document.getElementById("securityAnswer").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") checkSecurityAnswer();
+            });
+            
+            // Video boyutunu ayarla
+            adjustVideo();
+            window.addEventListener('resize', adjustVideo);
+            
+            // Oturum zaman aşımı kontrolü
+            setInterval(checkSessionTimeout, 60000); // Her dakika kontrol
+        });
+
+        // Şifre kontrolü
         function checkPassword() {
             const now = Date.now();
             
-            // Eğer blokeli ise
-            if (now < blockedUntil) {
-                const remainingTime = Math.ceil((blockedUntil - now) / 1000);
-                alert(`Çok fazla deneme yaptınız. Lütfen ${remainingTime} saniye sonra tekrar deneyin.`);
+            // Bloke kontrolü
+            if (now < currentState.blockedUntil) {
+                showBlockedMessage();
                 return;
             }
-
-            const enteredPassword = document.getElementById("password").value;
             
-            if(enteredPassword === correctPassword) {
-                // Başarılı giriş
-                failedAttempts = 0;
-                window.location.href = "all.html";
-            } else {
-                failedAttempts++;
-                document.getElementById("password").value = "";
+            const enteredPassword = document.getElementById("password").value.trim();
+            
+            if (enteredPassword === securityConfig.password) {
+                // Şifre doğru, rastgele bir güvenlik sorusu seç
+                currentState.currentQuestionIndex = Math.floor(Math.random() * securityConfig.securityQuestions.length);
+                const question = securityConfig.securityQuestions[currentState.currentQuestionIndex].question;
                 
-                if (failedAttempts >= maxAttempts) {
-                    // 5 dakika blok
-                    blockedUntil = now + (5 * 60 * 1000);
-                    alert("Çok fazla hatalı deneme yaptınız. Güvenlik nedeniyle 5 dakika boyunca giriş yapamazsınız.");
-                } else {
-                    const remainingAttempts = maxAttempts - failedAttempts;
-                    alert(`Hatalı şifre! Kalan deneme hakkınız: ${remainingAttempts}`);
-                }
+                // Güvenlik katmanını göster
+                document.getElementById("securityQuestion").textContent = question;
+                document.getElementById("securityLayer").style.display = 'block';
+                document.getElementById("password").value = '';
+                
+                // Odağı güvenlik cevabına al
+                setTimeout(() => {
+                    document.getElementById("securityAnswer").focus();
+                }, 300);
+            } else {
+                handleFailedAttempt();
             }
         }
 
-        // ESC tuşunu devre dışı bırak
-        document.addEventListener('keydown', function(e) {
-            if(e.key === "Escape") {
-                e.preventDefault();
+        // Güvenlik sorusu kontrolü
+        function checkSecurityAnswer() {
+            const enteredAnswer = document.getElementById("securityAnswer").value.trim().toLowerCase();
+            const correctAnswer = securityConfig.securityQuestions[currentState.currentQuestionIndex].answer;
+            
+            if (enteredAnswer === correctAnswer) {
+                // Tüm güvenlik aşamaları başarılı
+                startNewSession();
+                window.location.href = "all.html";
+            } else {
+                // Hatalı cevap
+                document.getElementById("securityAnswer").classList.add('error-shake');
+                setTimeout(() => {
+                    document.getElementById("securityAnswer").classList.remove('error-shake');
+                }, 500);
+                document.getElementById("securityAnswer").value = '';
+                alert("Güvenlik sorusunu yanlış cevapladınız! Lütfen tekrar deneyin.");
             }
-        });
+        }
 
-        // Enter tuşu ile giriş yap
-        document.getElementById("password").addEventListener("keypress", function(e) {
-            if (e.key === "Enter") {
-                checkPassword();
+        // Başarısız giriş işlemi
+        function handleFailedAttempt() {
+            currentState.failedAttempts++;
+            document.getElementById("password").classList.add('error-shake');
+            setTimeout(() => {
+                document.getElementById("password").classList.remove('error-shake');
+            }, 500);
+            document.getElementById("password").value = '';
+            
+            // Kalan deneme hakkını göster
+            const remainingAttempts = securityConfig.maxAttempts - currentState.failedAttempts;
+            const warningElement = document.getElementById("attemptsWarning");
+            const attemptsText = document.getElementById("attemptsText");
+            
+            if (remainingAttempts > 0) {
+                attemptsText.textContent = `Kalan deneme hakkınız: ${remainingAttempts}`;
+                warningElement.style.display = 'flex';
+            } else {
+                // Çok fazla deneme - blokla
+                currentState.blockedUntil = Date.now() + securityConfig.blockTime;
+                showBlockedMessage();
             }
-        });
+        }
+
+        // Bloke mesajını göster
+        function showBlockedMessage() {
+            const remainingTime = Math.ceil((currentState.blockedUntil - Date.now()) / 1000 / 60);
+            alert(`Çok fazla hatalı giriş denemesi yaptınız. Lütfen ${remainingTime} dakika sonra tekrar deneyin.`);
+        }
+
+        // Yeni oturum başlat
+        function startNewSession() {
+            currentState.lastActivity = Date.now();
+            sessionStorage.setItem('lastActivity', currentState.lastActivity.toString());
+        }
+
+        // Oturum zaman aşımı kontrolü
+        function checkSessionTimeout() {
+            if (currentState.lastActivity && 
+                (Date.now() - currentState.lastActivity) > securityConfig.sessionTimeout) {
+                alert('Oturum zaman aşımına uğradı. Lütfen tekrar giriş yapın.');
+                window.location.href = "index.html";
+            }
+        }
+
+        // Oturum kontrolü
+        function checkSession() {
+            const savedTime = sessionStorage.getItem('lastActivity');
+            if (savedTime) {
+                currentState.lastActivity = parseInt(savedTime);
+                checkSessionTimeout();
+            }
+        }
 
         // Video boyutunu ayarla
         function adjustVideo() {
             const video = document.getElementById('bgVideo');
             const container = document.querySelector('.video-background');
-            const containerRatio = container.offsetWidth / container.offsetHeight;
-            const videoRatio = video.videoWidth / video.videoHeight;
             
-            if (containerRatio > videoRatio) {
-                video.style.width = 'auto';
-                video.style.height = '100%';
-            } else {
-                video.style.width = '100%';
-                video.style.height = 'auto';
+            if (video && container) {
+                const containerRatio = container.offsetWidth / container.offsetHeight;
+                const videoRatio = video.videoWidth / video.videoHeight;
+                
+                if (containerRatio > videoRatio) {
+                    video.style.width = 'auto';
+                    video.style.height = '100%';
+                } else {
+                    video.style.width = '100%';
+                    video.style.height = 'auto';
+                }
+                
+                video.style.left = '50%';
+                video.style.top = '50%';
+                video.style.transform = 'translate(-50%, -50%)';
             }
-            
-            video.style.left = '50%';
-            video.style.top = '50%';
-            video.style.transform = 'translate(-50%, -50%)';
         }
-
-        window.addEventListener('load', adjustVideo);
-        window.addEventListener('resize', adjustVideo);
-        document.getElementById('bgVideo').addEventListener('loadedmetadata', adjustVideo);
     </script>
 </body>
 </html>
