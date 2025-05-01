@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Güvenli Giriş Paneli</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --error-color: #f44336;
+            --success-color: #4CAF50;
+            --warning-color: #FF9800;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            opacity: 0.7;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .auth-box {
+            background: rgba(15, 15, 20, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 480px;
+            padding: 40px;
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: all 0.5s ease;
+        }
+
+        .auth-box:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .logo img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo h1 {
+            color: white;
+            margin-top: 15px;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo .admin-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--warning-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(15deg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px 18px;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .security-layer {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .security-question {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .error-shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translateX(-2px); }
+            20%, 80% { transform: translateX(3px); }
+            30%, 50%, 70% { transform: translateX(-5px); }
+            40%, 60% { transform: translateX(5px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status-message {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .status-message i {
+            color: var(--primary-color);
+        }
+
+        .attempts-warning {
+            color: rgba(255, 165, 0, 0.9);
+            font-size: 13px;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+            background: rgba(255, 165, 0, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .captcha-code {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            letter-spacing: 3px;
+            user-select: none;
+            flex: 1;
+            text-align: center;
+        }
+
+        .refresh-captcha {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .refresh-captcha:hover {
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .time-restriction {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .login-steps {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .step {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .step.active {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* Responsive tasarım */
+        @media (max-width: 480px) {
+            .auth-box {
+                padding: 30px 20px;
+                margin: 0 15px;
+            }
+            
+            .logo h1 {
+                font-size: 1.6rem;
+            }
+            
+            .input-field, .btn {
+                padding: 14px 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="tema/MakimaChains4K.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="login-container">
+        <div class="auth-box" id="authBox">
+            <div class="logo">
+                <img src="https://i.hizliresim.com/bfoty7k.gif" alt="Logo">
+                <h1>Admin Giriş Paneli</h1>
+                <div class="admin-badge">YÖNETİCİ</div>
+            </div>
+            
+            <div class="login-steps" id="loginSteps">
+                <div class="step active" id="step1"></div>
+                <div class="step" id="step2"></div>
+                <div class="step" id="step3"></div>
+                <div class="step" id="step4"></div>
+            </div>
+            
+            <div id="emailPasswordSection">
+                <div class="input-group">
+                    <label for="email">Admin Email</label>
+                    <input type="email" id="email" class="input-field" 
+                           placeholder="admin@example.com" autocomplete="off">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" class="input-field" 
+                           placeholder="••••••••" autocomplete="off">
+                </div>
+                
+                <div class="captcha-container">
+                    <div class="captcha-code" id="captchaCode">A7B9C2</div>
+                    <button class="refresh-captcha" onclick="generateCaptcha()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                
+                <div class="input-group">
+                    <label for="captchaInput">CAPTCHA Doğrulama</label>
+                    <input type="text" id="captchaInput" class="input-field" 
+                           placeholder="Yukarıdaki kodu girin" autocomplete="off">
+                </div>
+                
+                <button class="btn" onclick="checkEmailPassword()">
+                    <i class="fas fa-arrow-right"></i> Devam Et
+                </button>
+                <div class="attempts-warning" id="attemptsWarning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="attemptsText"></span>
+                </div>
+            </div>
+            
+            <div class="security-layer" id="securityLayer">
+                <div class="security-question" id="securityQuestion"></div>
+                
+                <div class="input-group">
+                    <label for="securityAnswer">Güvenlik Cevabı</label>
+                    <input type="text" id="securityAnswer" class="input-field" 
+                           placeholder="Cevabınızı girin" autocomplete="off">
+                </div>
+                
+                <button class="btn" onclick="checkSecurityAnswer()">
+                    <i class="fas fa-shield-alt"></i> Doğrula
+                </button>
+                
+                <button class="btn btn-secondary" onclick="backToEmailPassword()" style="margin-top: 10px;">
+                    <i class="fas fa-arrow-left"></i> Geri Dön
+                </button>
+            </div>
+            
+            <div class="security-layer" id="twoFactorLayer">
+                <div class="security-question">
+                    <i class="fas fa-mobile-alt"></i> Tarayıcınıza gönderilen 6 haneli doğrulama kodunu girin
+                </div>
+                
+                <div class="input-group">
+                    <label for="twoFactorCode">Doğrulama Kodu</label>
+                    <input type="text" id="twoFactorCode" class="input-field" 
+                           placeholder="123456" autocomplete="off" maxlength="6">
+                </div>
+                
+                <button class="btn" onclick="verifyTwoFactorCode()">
+                    <i class="fas fa-check-circle"></i> Doğrula
+                </button>
+                
+                <button class="btn btn-secondary" onclick="backToSecurityQuestion()" style="margin-top: 10px;">
+                    <i class="fas fa-arrow-left"></i> Geri Dön
+                </button>
+                
+                <div class="status-message" style="margin-top: 15px;">
+                    <i class="fas fa-info-circle"></i> Kod 5 dakika geçerlidir
+                </div>
+            </div>
+            
+            <div class="status-message">
+                <i class="fas fa-shield-alt"></i>
+                <span>Güvenli bağlantı - Tüm veriler şifrelenmiştir</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Güvenlik konfigürasyonu
+        const securityConfig = {
+            adminCredentials: [
+                {
+                    email: "tristybaba@gmail.com",
+                    password: "sikergeçer",
+                    twoFactorEnabled: true,
+                    phoneNumber: "+905551112233"
+                }
+            ],
+            securityQuestions: [
+                {
+                    question: "Kimin saçı uzundur? (küçük harf | erkek)",
+                    answer: "haşim"
+                },
+                {
+                    question: "Kimin soyadı güldalıdır? (küçük harf)",
+                    answer: "arda"
+                },
+                {
+                    question: "Marketten ne çalındı?",
+                    answer: "kondom"
+                },
+                {
+                    question: "En sevilen içecek? (marka)",
+                    answer: "coca cola"
+                },
+                {
+                    question: "Takımın kaptanı kim? (isim)",
+                    answer: "emir"
+                }
+            ],
+            maxAttempts: 5,
+            blockTime: 15 * 60 * 1000, // 15 dakika (milisaniye cinsinden)
+            sessionTimeout: 30 * 60 * 1000, // 30 dakika
+            twoFactorTimeout: 5 * 60 * 1000 // 5 dakika
+        };
+
+        // Oturum ve giriş denemesi bilgileri
+        let currentState = {
+            failedAttempts: 0,
+            blockedUntil: 0,
+            currentQuestionIndex: 0,
+            currentAdmin: null,
+            lastActivity: Date.now(),
+            currentCaptcha: "A7B9C2",
+            twoFactorCode: null,
+            twoFactorExpires: 0
+        };
+
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', function() {
+            // Oturum kontrolü
+            checkSession();
+            
+            // Enter tuşu desteği
+            document.getElementById("email").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") checkEmailPassword();
+            });
+            
+            document.getElementById("password").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") checkEmailPassword();
+            });
+            
+            document.getElementById("captchaInput").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") checkEmailPassword();
+            });
+            
+            document.getElementById("securityAnswer").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") checkSecurityAnswer();
+            });
+            
+            document.getElementById("twoFactorCode").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") verifyTwoFactorCode();
+            });
+            
+            // Video boyutunu ayarla
+            adjustVideo();
+            window.addEventListener('resize', adjustVideo);
+            
+            // Oturum zaman aşımı kontrolü
+            setInterval(checkSessionTimeout, 60000); // Her dakika kontrol
+            
+            // CAPTCHA oluştur
+            generateCaptcha();
+        });
+
+        // Email ve şifre kontrolü
+        function checkEmailPassword() {
+            const now = Date.now();
+            
+            // Bloke kontrolü
+            if (now < currentState.blockedUntil) {
+                showBlockedMessage();
+                return;
+            }
+            
+            // CAPTCHA kontrolü
+            const captchaInput = document.getElementById("captchaInput").value.trim();
+            if (captchaInput.toUpperCase() !== currentState.currentCaptcha) {
+                document.getElementById("captchaInput").classList.add('error-shake');
+                setTimeout(() => {
+                    document.getElementById("captchaInput").classList.remove('error-shake');
+                }, 500);
+                document.getElementById("captchaInput").value = '';
+                generateCaptcha();
+                alert("CAPTCHA doğrulaması başarısız! Lütfen doğru kodu girin.");
+                return;
+            }
+            
+            const email = document.getElementById("email").value.trim().toLowerCase();
+            const password = document.getElementById("password").value.trim();
+            
+            // Admin bilgilerini kontrol et
+            const admin = securityConfig.adminCredentials.find(a => a.email === email && a.password === password);
+            
+            if (admin) {
+                currentState.currentAdmin = admin;
+                
+                // 2FA etkinse
+                if (admin.twoFactorEnabled) {
+                    sendTwoFactorCode();
+                    document.getElementById("emailPasswordSection").style.display = 'none';
+                    document.getElementById("twoFactorLayer").style.display = 'block';
+                    updateSteps(3);
+                } else {
+                    // Rastgele bir güvenlik sorusu seç
+                    currentState.currentQuestionIndex = Math.floor(Math.random() * securityConfig.securityQuestions.length);
+                    const question = securityConfig.securityQuestions[currentState.currentQuestionIndex].question;
+                    
+                    // Güvenlik katmanını göster
+                    document.getElementById("securityQuestion").textContent = question;
+                    document.getElementById("emailPasswordSection").style.display = 'none';
+                    document.getElementById("securityLayer").style.display = 'block';
+                    document.getElementById("password").value = '';
+                    updateSteps(2);
+                    
+                    // Odağı güvenlik cevabına al
+                    setTimeout(() => {
+                        document.getElementById("securityAnswer").focus();
+                    }, 300);
+                }
+            } else {
+                handleFailedAttempt();
+            }
+        }
+
+        // Güvenlik sorusu kontrolü
+        function checkSecurityAnswer() {
+            const enteredAnswer = document.getElementById("securityAnswer").value.trim().toLowerCase();
+            const correctAnswer = securityConfig.securityQuestions[currentState.currentQuestionIndex].answer;
+            
+            if (enteredAnswer === correctAnswer) {
+                // 2FA etkinse
+                if (currentState.currentAdmin.twoFactorEnabled) {
+                    sendTwoFactorCode();
+                    document.getElementById("securityLayer").style.display = 'none';
+                    document.getElementById("twoFactorLayer").style.display = 'block';
+                    updateSteps(3);
+                } else {
+                    // Tüm güvenlik aşamaları başarılı
+                    startNewSession();
+                    logLoginActivity(true);
+                    window.location.href = "admin-dashboard.html";
+                }
+            } else {
+                // Hatalı cevap
+                document.getElementById("securityAnswer").classList.add('error-shake');
+                setTimeout(() => {
+                    document.getElementById("securityAnswer").classList.remove('error-shake');
+                }, 500);
+                document.getElementById("securityAnswer").value = '';
+                alert("Güvenlik sorusunu yanlış cevapladınız! Lütfen tekrar deneyin.");
+            }
+        }
+
+        // 2FA kodunu doğrula
+        function verifyTwoFactorCode() {
+            const enteredCode = document.getElementById("twoFactorCode").value.trim();
+            const now = Date.now();
+            
+            if (now > currentState.twoFactorExpires) {
+                alert("Doğrulama kodunun süresi dolmuş! Lütfen yeni bir kod talep edin.");
+                return;
+            }
+            
+            if (enteredCode === currentState.twoFactorCode) {
+                // Tüm güvenlik aşamaları başarılı
+                startNewSession();
+                logLoginActivity(true);
+                window.location.href = "admin-dashboard.html";
+            } else {
+                document.getElementById("twoFactorCode").classList.add('error-shake');
+                setTimeout(() => {
+                    document.getElementById("twoFactorCode").classList.remove('error-shake');
+                }, 500);
+                document.getElementById("twoFactorCode").value = '';
+                alert("Doğrulama kodu hatalı! Lütfen tekrar deneyin.");
+            }
+        }
+
+        // 2FA kodu gönder (simülasyon)
+        function sendTwoFactorCode() {
+            // Rastgele 6 haneli kod oluştur
+            currentState.twoFactorCode = Math.floor(100000 + Math.random() * 900000).toString();
+            currentState.twoFactorExpires = Date.now() + securityConfig.twoFactorTimeout;
+            
+            // Gerçek uygulamada burada SMS gönderim API'si kullanılır
+            console.log(`2FA kodu gönderildi (simülasyon): ${currentState.twoFactorCode} - ${currentState.currentAdmin.phoneNumber}`);
+            
+            alert(`Doğrulama kodunuz gönderildi: ${currentState.twoFactorCode}\n\n`);
+        }
+
+        // Başarısız giriş işlemi
+        function handleFailedAttempt() {
+            currentState.failedAttempts++;
+            document.getElementById("password").classList.add('error-shake');
+            setTimeout(() => {
+                document.getElementById("password").classList.remove('error-shake');
+            }, 500);
+            document.getElementById("password").value = '';
+            document.getElementById("captchaInput").value = '';
+            generateCaptcha();
+            
+            // Kalan deneme hakkını göster
+            const remainingAttempts = securityConfig.maxAttempts - currentState.failedAttempts;
+            const warningElement = document.getElementById("attemptsWarning");
+            const attemptsText = document.getElementById("attemptsText");
+            
+            if (remainingAttempts > 0) {
+                attemptsText.textContent = `Kalan deneme hakkınız: ${remainingAttempts}`;
+                warningElement.style.display = 'flex';
+            } else {
+                // Çok fazla deneme - blokla
+                currentState.blockedUntil = Date.now() + securityConfig.blockTime;
+                showBlockedMessage();
+            }
+            
+            // Giriş denemesini logla
+            logLoginActivity(false);
+        }
+
+        // Bloke mesajını göster
+        function showBlockedMessage() {
+            const remainingTime = Math.ceil((currentState.blockedUntil - Date.now()) / 1000 / 60);
+            alert(`Çok fazla hatalı giriş denemesi yaptınız. Lütfen ${remainingTime} dakika sonra tekrar deneyin.`);
+        }
+
+        // Yeni oturum başlat
+        function startNewSession() {
+            currentState.lastActivity = Date.now();
+            sessionStorage.setItem('lastActivity', currentState.lastActivity.toString());
+            sessionStorage.setItem('adminEmail', currentState.currentAdmin.email);
+        }
+
+        // Oturum zaman aşımı kontrolü
+        function checkSessionTimeout() {
+            if (currentState.lastActivity && 
+                (Date.now() - currentState.lastActivity) > securityConfig.sessionTimeout) {
+                alert('Oturum zaman aşımına uğradı. Lütfen tekrar giriş yapın.');
+                window.location.href = "admin-login.html";
+            }
+        }
+
+        // Oturum kontrolü
+        function checkSession() {
+            const savedTime = sessionStorage.getItem('lastActivity');
+            if (savedTime) {
+                currentState.lastActivity = parseInt(savedTime);
+                checkSessionTimeout();
+            }
+        }
+
+        // CAPTCHA oluştur
+        function generateCaptcha() {
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
+            let captcha = "";
+            for (let i = 0; i < 6; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            currentState.currentCaptcha = captcha;
+            document.getElementById("captchaCode").textContent = captcha;
+        }
+
+        // Video boyutunu ayarla
+        function adjustVideo() {
+            const video = document.getElementById('bgVideo');
+            const container = document.querySelector('.video-background');
+            
+            if (video && container) {
+                const containerRatio = container.offsetWidth / container.offsetHeight;
+                const videoRatio = video.videoWidth / video.videoHeight;
+                
+                if (containerRatio > videoRatio) {
+                    video.style.width = 'auto';
+                    video.style.height = '100%';
+                } else {
+                    video.style.width = '100%';
+                    video.style.height = 'auto';
+                }
+                
+                video.style.left = '50%';
+                video.style.top = '50%';
+                video.style.transform = 'translate(-50%, -50%)';
+            }
+        }
+
+        // Giriş adımlarını güncelle
+        function updateSteps(activeStep) {
+            for (let i = 1; i <= 4; i++) {
+                const step = document.getElementById(`step${i}`);
+                if (i <= activeStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            }
+        }
+
+        // Email/şifre ekranına geri dön
+        function backToEmailPassword() {
+            document.getElementById("securityLayer").style.display = 'none';
+            document.getElementById("emailPasswordSection").style.display = 'block';
+            updateSteps(1);
+        }
+
+        // Güvenlik sorusu ekranına geri dön
+        function backToSecurityQuestion() {
+            document.getElementById("twoFactorLayer").style.display = 'none';
+            document.getElementById("securityLayer").style.display = 'block';
+            updateSteps(2);
+        }
+
+        // Giriş aktivitesini logla (simülasyon)
+        function logLoginActivity(success) {
+            const now = new Date();
+            const logEntry = {
+                timestamp: now.toISOString(),
+                email: document.getElementById("email").value.trim(),
+                status: success ? "Başarılı" : "Başarısız",
+                userAgent: navigator.userAgent
+            };
+            
+            // Gerçek uygulamada bu veri sunucuya gönderilir
+            console.log("Giriş denemesi loglandı:", logEntry);
+        }
+    </script>
+</body>
+</html>
