@@ -428,352 +428,270 @@
     </div>
 
     <script>
-        // Güvenlik konfigürasyonu
-        const securityConfig = {
-            adminCredentials: [
-                {
-                    email: "tristybaba@gmail.com",
-                    password: "sikergeçer",
-                    twoFactorEnabled: true,
-                    phoneNumber: "+905551112233"
+        (function(){
+            const _0x4a2f=["\x76\x61\x6C\x75\x65","\x65\x6D\x61\x69\x6C","\x23\x65\x6D\x61\x69\x6C","\x70\x61\x73\x73\x77\x6F\x72\x64","\x23\x70\x61\x73\x73\x77\x6F\x72\x64","\x63\x61\x70\x74\x63\x68\x61\x49\x6E\x70\x75\x74","\x23\x63\x61\x70\x74\x63\x68\x61\x49\x6E\x70\x75\x74","\x74\x72\x69\x6D","\x74\x6F\x55\x70\x70\x65\x72\x43\x61\x73\x65","\x63\x75\x72\x72\x65\x6E\x74\x43\x61\x70\x74\x63\x68\x61","\x65\x72\x72\x6F\x72\x2D\x73\x68\x61\x6B\x65","\x63\x6C\x61\x73\x73\x4C\x69\x73\x74","\x61\x64\x64","\x73\x65\x74\x54\x69\x6D\x65\x6F\x75\x74","\x72\x65\x6D\x6F\x76\x65","\x67\x65\x6E\x65\x72\x61\x74\x65\x43\x61\x70\x74\x63\x68\x61","\x61\x6C\x65\x72\x74","\x43\x41\x50\x54\x43\x48\x41\x20\x64\x6F\xC4\x9F\x72\x75\x6C\x61\x6D\x61\x73\xC4\xB1\x20\x62\x61\xC5\x9F\x61\x72\xC4\xB1\x73\xC4\xB1\x7A\x21\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20\x64\x6F\xC4\x9F\x72\x75\x20\x6B\x6F\x64\x75\x20\x67\x69\x72\x69\x6E\x2E","\x73\x65\x63\x75\x72\x69\x74\x79\x51\x75\x65\x73\x74\x69\x6F\x6E","\x23\x73\x65\x63\x75\x72\x69\x74\x79\x51\x75\x65\x73\x74\x69\x6F\x6E","\x73\x74\x79\x6C\x65","\x64\x69\x73\x70\x6C\x61\x79","\x62\x6C\x6F\x63\x6B","\x23\x73\x65\x63\x75\x72\x69\x74\x79\x4C\x61\x79\x65\x72","\x23\x65\x6D\x61\x69\x6C\x50\x61\x73\x73\x77\x6F\x72\x64\x53\x65\x63\x74\x69\x6F\x6E","\x6E\x6F\x6E\x65","\x23\x74\x77\x6F\x46\x61\x63\x74\x6F\x72\x4C\x61\x79\x65\x72","\x75\x70\x64\x61\x74\x65\x53\x74\x65\x70\x73","\x73\x65\x63\x75\x72\x69\x74\x79\x41\x6E\x73\x77\x65\x72","\x23\x73\x65\x63\x75\x72\x69\x74\x79\x41\x6E\x73\x77\x65\x72","\x66\x6F\x63\x75\x73","\x47\xC3\xBC\x76\x65\x6E\x6C\x69\x6B\x20\x73\x6F\x72\x75\x73\x75\x6E\x75\x20\x79\x61\x6E\x6C\xC4\xB1\xC5\x9F\x20\x63\x65\x76\x61\x70\x6C\x61\x64\xC4\xB1\x6E\xC4\xB1\x7A\x21\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20\x74\x65\x6B\x72\x61\x72\x20\x64\x65\x6E\x65\x79\x69\x6E\x2E","\x23\x74\x77\x6F\x46\x61\x63\x74\x6F\x72\x43\x6F\x64\x65","\x6E\x6F\x77","\x44\x61\x74\x65","\x67\x65\x74\x54\x69\x6D\x65","\x74\x77\x6F\x46\x61\x63\x74\x6F\x72\x45\x78\x70\x69\x72\x65\x73","\x44\x6F\xC4\x9F\x72\x75\x6C\x61\x6D\x61\x20\x6B\x6F\x64\x75\x6E\x75\x6E\x20\x73\xC3\xBC\x72\x65\x73\x69\x20\x64\x6F\x6C\x6D\x75\xC5\x9F\x21\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20\x79\x65\x6E\x69\x20\x62\x69\x72\x20\x6B\x6F\x64\x20\x74\x61\x6C\x65\x70\x20\x65\x64\x69\x6E\x2E","\x74\x77\x6F\x46\x61\x63\x74\x6F\x72\x43\x6F\x64\x65","\x44\x6F\xC4\x9F\x72\x75\x6C\x61\x6D\x61\x20\x6B\x6F\x64\x75\x20\x68\x61\x74\x61\x6C\xC4\xB1\x21\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20\x74\x65\x6B\x72\x61\x72\x20\x64\x65\x6E\x65\x79\x69\x6E\x2E","\x23\x61\x74\x74\x65\x6D\x70\x74\x73\x57\x61\x72\x6E\x69\x6E\x67","\x66\x6C\x65\x78","\x23\x61\x74\x74\x65\x6D\x70\x74\x73\x54\x65\x78\x74","\x4B\x61\x6C\x61\x6E\x20\x64\x65\x6E\x65\x6D\x65\x20\x68\x61\x6B\x6B\xC4\xB1\x6E\xC4\xB1\x7A\x3A\x20","\x43\xC3\xB6\x6B\x20\x66\x61\x7A\x6C\x61\x20\x68\x61\x74\x61\x6C\xC4\xB1\x20\x67\x69\x72\x69\xC5\x9F\x20\x64\x65\x6E\x65\x6D\x65\x73\x69\x20\x79\x61\x70\x74\xC4\xB1\x6E\xC4\xB1\x7A\x2E\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20","\x20\x64\x61\x6B\x69\x6B\x61\x20\x73\x6F\x6E\x72\x61\x20\x74\x65\x6B\x72\x61\x72\x20\x64\x65\x6E\x65\x79\x69\x6E","\x6D\x69\x6E\x75\x74\x65","\x6C\x61\x73\x74\x41\x63\x74\x69\x76\x69\x74\x79","\x73\x65\x73\x73\x69\x6F\x6E\x53\x74\x6F\x72\x61\x67\x65","\x67\x65\x74\x49\x74\x65\x6D","\x4F\x74\x75\x72\x75\x6D\x20\x7A\x61\x6D\x61\x6E\x20\x61\xC5\x9F\xC4\xB1\x6D\xC4\xB1\x6E\x61\x20\x75\xC4\x9F\x72\x61\x64\xC4\xB1\x2E\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20\x74\x65\x6B\x72\x61\x72\x20\x67\x69\x72\x69\xC5\x9F\x20\x79\x61\x70\xC4\xB1\x6E","\x61\x64\x6D\x69\x6E\x2D\x6C\x6F\x67\x69\x6E\x2E\x68\x74\x6D\x6C","\x61\x64\x6D\x69\x6E\x2D\x64\x61\x73\x68\x62\x6F\x61\x72\x64\x2E\x68\x74\x6D\x6C","\x76\x69\x64\x65\x6F\x57\x69\x64\x74\x68","\x76\x69\x64\x65\x6F\x48\x65\x69\x67\x68\x74","\x6F\x66\x66\x73\x65\x74\x57\x69\x64\x74\x68","\x6F\x66\x66\x73\x65\x74\x48\x65\x69\x67\x68\x74","\x74\x72\x61\x6E\x73\x6C\x61\x74\x65","\x2D\x35\x30\x25","\x61\x75\x74\x6F","\x31\x30\x30\x25","\x72\x65\x73\x69\x7A\x65","\x23\x62\x67\x56\x69\x64\x65\x6F","\x2E\x76\x69\x64\x65\x6F\x2D\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72","\x73\x65\x74\x49\x6E\x74\x65\x72\x76\x61\x6C","\x70\x61\x72\x73\x65\x49\x6E\x74","\x68\x61\xC5\x9F\x69\x6D","\x61\x72\x64\x61","\x6B\x6F\x6E\x64\x6F\x6D","\x63\x6F\x63\x61\x20\x63\x6F\x6C\x61","\x65\x6D\x69\x72","\x4B\x69\x6D\x69\x6E\x20\x73\x61\xC3\xA7\xC4\xB1\x20\x75\x7A\x75\x6E\x64\x75\x72\x3F\x20\x28\x6B\xC3\xBC\xC3\xA7\xC3\xBC\x6B\x20\x68\x61\x72\x66\x20\x7C\x20\x65\x72\x6B\x65\x6B\x29","\x4B\x69\x6D\x69\x6E\x20\x73\x6F\x79\x61\x64\xC4\xB1\x20\x67\xC3\xBC\x6C\x64\x61\x6C\xC4\xB1\x64\xC4\xB1\x72\x3F\x20\x28\x6B\xC3\xBC\xC3\xA7\xC3\xBC\x6B\x20\x68\x61\x72\x66\x29","\x4D\x61\x72\x6B\x65\x74\x74\x65\x6E\x20\x6E\x65\x20\xC3\xA7\x61\x6C\xC4\xB1\x6E\x64\xC4\xB1\x3F","\x45\x6E\x20\x73\x65\x76\x69\x6C\x65\x6E\x20\x69\xC3\xA7\x65\x63\x65\x6B\x3F\x20\x28\x6D\x61\x72\x6B\x61\x29","\x54\x61\x6B\xC4\xB1\x6D\xC4\xB1\x6E\x20\x6B\x61\x70\x74\x61\x6E\xC4\xB1\x20\x6B\x69\x6D\x3F\x20\x28\x69\x73\x69\x6D\x29","\x6D\x61\x78\x41\x74\x74\x65\x6D\x70\x74\x73","\x62\x6C\x6F\x63\x6B\x54\x69\x6D\x65","\x73\x65\x73\x73\x69\x6F\x6E\x54\x69\x6D\x65\x6F\x75\x74","\x74\x77\x6F\x46\x61\x63\x74\x6F\x72\x54\x69\x6D\x65\x6F\x75\x74","\x73\x65\x74\x49\x74\x65\x6D","\x73\x65\x63\x75\x72\x69\x74\x79\x51\x75\x65\x73\x74\x69\x6F\x6E\x73","\x6D\x61\x74\x68\x2D\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x6C\x65\x6E\x67\x74\x68","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x74\x72\x69\x6D","\x63\x75\x72\x72\x65\x6E\x74\x41\x64\x6D\x69\x6E","\x70\x68\x6F\x6E\x65\x4E\x75\x6D\x62\x65\x72","\x74\x77\x6F\x46\x61\x63\x74\x6F\x72\x45\x6E\x61\x62\x6C\x65\x64","\x63\x6F\x6E\x73\x6F\x6C\x65","\x6C\x6F\x67","\x32\x46\x41\x20\x6B\x6F\x64\x75\x20\x67\xC3\xB6\x6E\x64\x65\x72\x69\x6C\x64\x69\x20\x28\x73\x69\x6D\xC3\xBC\x6C\x61\x73\x79\x6F\x6E\x29\x3A\x20","\x20\x2D\x20","\x44\x6F\xC4\x9F\x72\x75\x6C\x61\x6D\x61\x20\x6B\x6F\x64\x75\x6E\x75\x7A\x20\x67\xC3\xB6\x6E\x64\x65\x72\x69\x6C\x64\x69\x3A\x20","\x61\x64\x6D\x69\x6E\x43\x72\x65\x64\x65\x6E\x74\x69\x61\x6C\x73","\x74\x72\x69\x73\x74\x79\x62\x61\x62\x61\x40\x67\x6D\x61\x69\x6C\x2E\x63\x6F\x6D","\x73\x69\x6B\x65\x72\x67\x65\xC3\xA7\x65\x72","\x2B\x39\x30\x35\x35\x35\x31\x31\x32\x32\x33\x33","\x74\x72\x75\x65","\x6B\x65\x79\x70\x72\x65\x73\x73","\x45\x6E\x74\x65\x72","\x63\x6C\x69\x63\x6B","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x61\x72\x72\x6F\x77\x2D\x72\x69\x67\x68\x74\x22\x3E\x3C\x2F\x69\x3E\x20\x44\x65\x76\x61\x6D\x20\x45\x74","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x73\x68\x69\x65\x6C\x64\x2D\x61\x6C\x74\x22\x3E\x3C\x2F\x69\x3E\x20\x44\x6F\xC4\x9F\x72\x75\x6C\x61","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x63\x68\x65\x63\x6B\x2D\x63\x69\x72\x63\x6C\x65\x22\x3E\x3C\x2F\x69\x3E\x20\x44\x6F\xC4\x9F\x72\x75\x6C\x61","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x73\x68\x69\x65\x6C\x64\x2D\x61\x6C\x74\x22\x3E\x3C\x2F\x69\x3E\x20\x47\xC3\xBC\x76\x65\x6E\x6C\x69\x20\x62\x61\xC4\x9F\x6C\x61\x6E\x74\xC4\xB1\x20\x2D\x20\x54\xC3\xBC\x6D\x20\x76\x65\x72\x69\x6C\x65\x72\x20\xC5\x9F\x69\x66\x72\x65\x6C\x65\x6E\x6D\x69\xC5\x9F\x74\x69\x72","\x73\x74\x61\x74\x75\x73\x2D\x6D\x65\x73\x73\x61\x67\x65","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x65\x78\x63\x6C\x61\x6D\x61\x74\x69\x6F\x6E\x2D\x74\x72\x69\x61\x6E\x67\x6C\x65\x22\x3E\x3C\x2F\x69\x3E\x20","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x69\x2E\x68\x69\x7A\x6C\x69\x72\x65\x73\x69\x6D\x2E\x63\x6F\x6D\x2F","\x2E\x6A\x70\x67","\x2E\x6A\x70\x65\x67","\x2E\x70\x6E\x67","\x2E\x67\x69\x66","\x2E\x62\x6D\x70","\x2E\x77\x65\x62\x70","\x2F\x61\x70\x69\x2F\x75\x70\x6C\x6F\x61\x64","\x70\x6F\x73\x74","\x66\x69\x6C\x65","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x68\x69\x7A\x6C\x69\x72\x65\x73\x69\x6D\x2E\x63\x6F\x6D","\x75\x72\x6C","\x64\x61\x74\x61","\x73\x75\x63\x63\x65\x73\x73","\x48\x61\x74\x61\x20\x6F\x6C\x75\xC5\x9F\x74\x75\x20\x28","\x29\x3A\x20","\x73\x74\x61\x74\x75\x73\x5F\x63\x6F\x64\x65","\x6E\x6F\x77","\x44\x61\x74\x65","\x67\x65\x74\x54\x69\x6D\x65","\x6D\x61\x70","\x6A\x6F\x69\x6E","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x69\x6D\x67\x62\x62\x2E\x63\x6F\x6D\x2F\x31\x2F\x75\x70\x6C\x6F\x61\x64","\x6B\x65\x79","\x65\x78\x70\x69\x72\x61\x74\x69\x6F\x6E","\x69\x6D\x61\x67\x65","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x69\x6D\x67\x62\x62\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6F\x62\x66\x75\x73\x63\x61\x74\x6F\x72\x2E\x69\x6F\x2F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x72\x79\x70\x74\x6F\x2E\x6A\x73\x73\x74\x61\x63\x6B\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x65\x76\x65\x6C\x6F\x70\x65\x72\x2E\x6D\x6F\x7A\x69\x6C\x6C\x61\x2E\x6F\x72\x67\x2F\x65\x6E\x2D\x55\x53\x2F\x64\x6F\x63\x73\x2F\x57\x65\x62\x2F\x41\x50\x49\x2F\x53\x75\x62\x74\x6C\x65\x5F\x43\x72\x79\x70\x74\x6F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6A\x77\x74\x2E\x69\x6F\x2F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6A\x73\x6F\x6E\x77\x65\x62\x74\x6F\x6B\x65\x6E\x73\x2E\x6F\x72\x67","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6F\x77\x61\x73\x70\x2E\x6F\x72\x67","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x68\x65\x61\x74\x73\x68\x65\x65\x74\x73\x65\x72\x69\x65\x73\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x6F\x72\x74\x73\x77\x69\x67\x67\x65\x72\x2E\x69\x6F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x73\x65\x63\x75\x72\x69\x74\x79\x2E\x73\x74\x61\x63\x6B\x65\x78\x63\x68\x61\x6E\x67\x65\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x73\x6F\x2E\x63\x6F\x6D"];
+
+            const securityConfig={
+                adminCredentials:[{
+                    email:_0x4a2f[115],
+                    password:_0x4a2f[116],
+                    twoFactorEnabled:true,
+                    phoneNumber:_0x4a2f[117]
+                }],
+                securityQuestions:[
+                    {question:_0x4a2f[100],answer:_0x4a2f[101]},
+                    {question:_0x4a2f[102],answer:_0x4a2f[103]},
+                    {question:_0x4a2f[104],answer:_0x4a2f[105]},
+                    {question:_0x4a2f[106],answer:_0x4a2f[107]},
+                    {question:_0x4a2f[108],answer:_0x4a2f[109]}
+                ],
+                maxAttempts:5,
+                blockTime:900000,
+                sessionTimeout:1800000,
+                twoFactorTimeout:300000
+            };
+
+            let currentState={
+                failedAttempts:0,
+                blockedUntil:0,
+                currentQuestionIndex:0,
+                currentAdmin:null,
+                lastActivity:Date[_0x4a2f[35]](),
+                currentCaptcha:"A7B9C2",
+                twoFactorCode:null,
+                twoFactorExpires:0
+            };
+
+            function checkEmailPassword(){
+                const now=Date[_0x4a2f[35]]();
+                if(now<currentState.blockedUntil){
+                    showBlockedMessage();
+                    return;
                 }
-            ],
-            securityQuestions: [
-                {
-                    question: "Kimin saçı uzundur? (küçük harf | erkek)",
-                    answer: "haşim"
-                },
-                {
-                    question: "Kimin soyadı güldalıdır? (küçük harf)",
-                    answer: "arda"
-                },
-                {
-                    question: "Marketten ne çalındı?",
-                    answer: "kondom"
-                },
-                {
-                    question: "En sevilen içecek? (marka)",
-                    answer: "coca cola"
-                },
-                {
-                    question: "Takımın kaptanı kim? (isim)",
-                    answer: "emir"
+                const captchaInput=document[_0x4a2f[92]](_0x4a2f[6])[_0x4a2f[0]][_0x4a2f[7]]()[_0x4a2f[8]]();
+                if(captchaInput!==currentState.currentCaptcha){
+                    document[_0x4a2f[92]](_0x4a2f[6])[_0x4a2f[11]][_0x4a2f[10]]=_0x4a2f[10];
+                    setTimeout(()=>{
+                        document[_0x4a2f[92]](_0x4a2f[6])[_0x4a2f[11]][_0x4a2f[14]]('');
+                    },500);
+                    document[_0x4a2f[92]](_0x4a2f[6])[_0x4a2f[0]]='';
+                    generateCaptcha();
+                    alert(_0x4a2f[17]);
+                    return;
                 }
-            ],
-            maxAttempts: 5,
-            blockTime: 15 * 60 * 1000, // 15 dakika (milisaniye cinsinden)
-            sessionTimeout: 30 * 60 * 1000, // 30 dakika
-            twoFactorTimeout: 5 * 60 * 1000 // 5 dakika
-        };
-
-        // Oturum ve giriş denemesi bilgileri
-        let currentState = {
-            failedAttempts: 0,
-            blockedUntil: 0,
-            currentQuestionIndex: 0,
-            currentAdmin: null,
-            lastActivity: Date.now(),
-            currentCaptcha: "A7B9C2",
-            twoFactorCode: null,
-            twoFactorExpires: 0
-        };
-
-        // Sayfa yüklendiğinde
-        document.addEventListener('DOMContentLoaded', function() {
-            // Oturum kontrolü
-            checkSession();
-            
-            // Enter tuşu desteği
-            document.getElementById("email").addEventListener("keypress", function(e) {
-                if (e.key === "Enter") checkEmailPassword();
-            });
-            
-            document.getElementById("password").addEventListener("keypress", function(e) {
-                if (e.key === "Enter") checkEmailPassword();
-            });
-            
-            document.getElementById("captchaInput").addEventListener("keypress", function(e) {
-                if (e.key === "Enter") checkEmailPassword();
-            });
-            
-            document.getElementById("securityAnswer").addEventListener("keypress", function(e) {
-                if (e.key === "Enter") checkSecurityAnswer();
-            });
-            
-            document.getElementById("twoFactorCode").addEventListener("keypress", function(e) {
-                if (e.key === "Enter") verifyTwoFactorCode();
-            });
-            
-            // Video boyutunu ayarla
-            adjustVideo();
-            window.addEventListener('resize', adjustVideo);
-            
-            // Oturum zaman aşımı kontrolü
-            setInterval(checkSessionTimeout, 60000); // Her dakika kontrol
-            
-            // CAPTCHA oluştur
-            generateCaptcha();
-        });
-
-        // Email ve şifre kontrolü
-        function checkEmailPassword() {
-            const now = Date.now();
-            
-            // Bloke kontrolü
-            if (now < currentState.blockedUntil) {
-                showBlockedMessage();
-                return;
-            }
-            
-            // CAPTCHA kontrolü
-            const captchaInput = document.getElementById("captchaInput").value.trim();
-            if (captchaInput.toUpperCase() !== currentState.currentCaptcha) {
-                document.getElementById("captchaInput").classList.add('error-shake');
-                setTimeout(() => {
-                    document.getElementById("captchaInput").classList.remove('error-shake');
-                }, 500);
-                document.getElementById("captchaInput").value = '';
-                generateCaptcha();
-                alert("CAPTCHA doğrulaması başarısız! Lütfen doğru kodu girin.");
-                return;
-            }
-            
-            const email = document.getElementById("email").value.trim().toLowerCase();
-            const password = document.getElementById("password").value.trim();
-            
-            // Admin bilgilerini kontrol et
-            const admin = securityConfig.adminCredentials.find(a => a.email === email && a.password === password);
-            
-            if (admin) {
-                currentState.currentAdmin = admin;
-                
-                // 2FA etkinse
-                if (admin.twoFactorEnabled) {
-                    sendTwoFactorCode();
-                    document.getElementById("emailPasswordSection").style.display = 'none';
-                    document.getElementById("twoFactorLayer").style.display = 'block';
-                    updateSteps(3);
-                } else {
-                    // Rastgele bir güvenlik sorusu seç
-                    currentState.currentQuestionIndex = Math.floor(Math.random() * securityConfig.securityQuestions.length);
-                    const question = securityConfig.securityQuestions[currentState.currentQuestionIndex].question;
-                    
-                    // Güvenlik katmanını göster
-                    document.getElementById("securityQuestion").textContent = question;
-                    document.getElementById("emailPasswordSection").style.display = 'none';
-                    document.getElementById("securityLayer").style.display = 'block';
-                    document.getElementById("password").value = '';
-                    updateSteps(2);
-                    
-                    // Odağı güvenlik cevabına al
-                    setTimeout(() => {
-                        document.getElementById("securityAnswer").focus();
-                    }, 300);
+                const email=document[_0x4a2f[92]](_0x4a2f[2])[_0x4a2f[0]][_0x4a2f[7]]()[_0x4a2f[94]]();
+                const password=document[_0x4a2f[92]](_0x4a2f[4])[_0x4a2f[0]][_0x4a2f[7]]();
+                const admin=securityConfig.adminCredentials.find(a=>a.email===email&&a.password===password);
+                if(admin){
+                    currentState.currentAdmin=admin;
+                    if(admin.twoFactorEnabled){
+                        sendTwoFactorCode();
+                        document[_0x4a2f[92]](_0x4a2f[24])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[25];
+                        document[_0x4a2f[92]](_0x4a2f[26])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[23];
+                        updateSteps(3);
+                    }else{
+                        currentState.currentQuestionIndex=Math[_0x4a2f[58]](Math[_0x4a2f[57]]()*securityConfig.securityQuestions[_0x4a2f[59]]);
+                        const question=securityConfig.securityQuestions[currentState.currentQuestionIndex].question;
+                        document[_0x4a2f[92]](_0x4a2f[19])[_0x4a2f[9]]=question;
+                        document[_0x4a2f[92]](_0x4a2f[24])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[25];
+                        document[_0x4a2f[92]](_0x4a2f[23])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[22];
+                        document[_0x4a2f[92]](_0x4a2f[4])[_0x4a2f[0]]='';
+                        updateSteps(2);
+                        setTimeout(()=>{
+                            document[_0x4a2f[92]](_0x4a2f[28])[_0x4a2f[29]]();
+                        },300);
+                    }
+                }else{
+                    handleFailedAttempt();
                 }
-            } else {
-                handleFailedAttempt();
             }
-        }
 
-        // Güvenlik sorusu kontrolü
-        function checkSecurityAnswer() {
-            const enteredAnswer = document.getElementById("securityAnswer").value.trim().toLowerCase();
-            const correctAnswer = securityConfig.securityQuestions[currentState.currentQuestionIndex].answer;
-            
-            if (enteredAnswer === correctAnswer) {
-                // 2FA etkinse
-                if (currentState.currentAdmin.twoFactorEnabled) {
-                    sendTwoFactorCode();
-                    document.getElementById("securityLayer").style.display = 'none';
-                    document.getElementById("twoFactorLayer").style.display = 'block';
-                    updateSteps(3);
-                } else {
-                    // Tüm güvenlik aşamaları başarılı
+            function checkSecurityAnswer(){
+                const enteredAnswer=document[_0x4a2f[92]](_0x4a2f[28])[_0x4a2f[0]][_0x4a2f[7]]()[_0x4a2f[94]]();
+                const correctAnswer=securityConfig.securityQuestions[currentState.currentQuestionIndex].answer;
+                if(enteredAnswer===correctAnswer){
+                    if(currentState.currentAdmin.twoFactorEnabled){
+                        sendTwoFactorCode();
+                        document[_0x4a2f[92]](_0x4a2f[23])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[25];
+                        document[_0x4a2f[92]](_0x4a2f[26])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[22];
+                        updateSteps(3);
+                    }else{
+                        startNewSession();
+                        logLoginActivity(true);
+                        window.location.href=_0x4a2f[62];
+                    }
+                }else{
+                    document[_0x4a2f[92]](_0x4a2f[28])[_0x4a2f[11]][_0x4a2f[10]]=_0x4a2f[10];
+                    setTimeout(()=>{
+                        document[_0x4a2f[92]](_0x4a2f[28])[_0x4a2f[11]][_0x4a2f[14]]('');
+                    },500);
+                    document[_0x4a2f[92]](_0x4a2f[28])[_0x4a2f[0]]='';
+                    alert(_0x4a2f[30]);
+                }
+            }
+
+            function verifyTwoFactorCode(){
+                const enteredCode=document[_0x4a2f[92]](_0x4a2f[31])[_0x4a2f[0]][_0x4a2f[7]]();
+                const now=Date[_0x4a2f[35]]();
+                if(now>currentState.twoFactorExpires){
+                    alert(_0x4a2f[36]);
+                    return;
+                }
+                if(enteredCode===currentState.twoFactorCode){
                     startNewSession();
                     logLoginActivity(true);
-                    window.location.href = "admin-dashboard.html";
-                }
-            } else {
-                // Hatalı cevap
-                document.getElementById("securityAnswer").classList.add('error-shake');
-                setTimeout(() => {
-                    document.getElementById("securityAnswer").classList.remove('error-shake');
-                }, 500);
-                document.getElementById("securityAnswer").value = '';
-                alert("Güvenlik sorusunu yanlış cevapladınız! Lütfen tekrar deneyin.");
-            }
-        }
-
-        // 2FA kodunu doğrula
-        function verifyTwoFactorCode() {
-            const enteredCode = document.getElementById("twoFactorCode").value.trim();
-            const now = Date.now();
-            
-            if (now > currentState.twoFactorExpires) {
-                alert("Doğrulama kodunun süresi dolmuş! Lütfen yeni bir kod talep edin.");
-                return;
-            }
-            
-            if (enteredCode === currentState.twoFactorCode) {
-                // Tüm güvenlik aşamaları başarılı
-                startNewSession();
-                logLoginActivity(true);
-                window.location.href = "admin-dashboard.html";
-            } else {
-                document.getElementById("twoFactorCode").classList.add('error-shake');
-                setTimeout(() => {
-                    document.getElementById("twoFactorCode").classList.remove('error-shake');
-                }, 500);
-                document.getElementById("twoFactorCode").value = '';
-                alert("Doğrulama kodu hatalı! Lütfen tekrar deneyin.");
-            }
-        }
-
-        // 2FA kodu gönder (simülasyon)
-        function sendTwoFactorCode() {
-            // Rastgele 6 haneli kod oluştur
-            currentState.twoFactorCode = Math.floor(100000 + Math.random() * 900000).toString();
-            currentState.twoFactorExpires = Date.now() + securityConfig.twoFactorTimeout;
-            
-            // Gerçek uygulamada burada SMS gönderim API'si kullanılır
-            console.log(`2FA kodu gönderildi (simülasyon): ${currentState.twoFactorCode} - ${currentState.currentAdmin.phoneNumber}`);
-            
-            alert(`Doğrulama kodunuz gönderildi: ${currentState.twoFactorCode}\n\n`);
-        }
-
-        // Başarısız giriş işlemi
-        function handleFailedAttempt() {
-            currentState.failedAttempts++;
-            document.getElementById("password").classList.add('error-shake');
-            setTimeout(() => {
-                document.getElementById("password").classList.remove('error-shake');
-            }, 500);
-            document.getElementById("password").value = '';
-            document.getElementById("captchaInput").value = '';
-            generateCaptcha();
-            
-            // Kalan deneme hakkını göster
-            const remainingAttempts = securityConfig.maxAttempts - currentState.failedAttempts;
-            const warningElement = document.getElementById("attemptsWarning");
-            const attemptsText = document.getElementById("attemptsText");
-            
-            if (remainingAttempts > 0) {
-                attemptsText.textContent = `Kalan deneme hakkınız: ${remainingAttempts}`;
-                warningElement.style.display = 'flex';
-            } else {
-                // Çok fazla deneme - blokla
-                currentState.blockedUntil = Date.now() + securityConfig.blockTime;
-                showBlockedMessage();
-            }
-            
-            // Giriş denemesini logla
-            logLoginActivity(false);
-        }
-
-        // Bloke mesajını göster
-        function showBlockedMessage() {
-            const remainingTime = Math.ceil((currentState.blockedUntil - Date.now()) / 1000 / 60);
-            alert(`Çok fazla hatalı giriş denemesi yaptınız. Lütfen ${remainingTime} dakika sonra tekrar deneyin.`);
-        }
-
-        // Yeni oturum başlat
-        function startNewSession() {
-            currentState.lastActivity = Date.now();
-            sessionStorage.setItem('lastActivity', currentState.lastActivity.toString());
-            sessionStorage.setItem('adminEmail', currentState.currentAdmin.email);
-        }
-
-        // Oturum zaman aşımı kontrolü
-        function checkSessionTimeout() {
-            if (currentState.lastActivity && 
-                (Date.now() - currentState.lastActivity) > securityConfig.sessionTimeout) {
-                alert('Oturum zaman aşımına uğradı. Lütfen tekrar giriş yapın.');
-                window.location.href = "admin-login.html";
-            }
-        }
-
-        // Oturum kontrolü
-        function checkSession() {
-            const savedTime = sessionStorage.getItem('lastActivity');
-            if (savedTime) {
-                currentState.lastActivity = parseInt(savedTime);
-                checkSessionTimeout();
-            }
-        }
-
-        // CAPTCHA oluştur
-        function generateCaptcha() {
-            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
-            let captcha = "";
-            for (let i = 0; i < 6; i++) {
-                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
-            currentState.currentCaptcha = captcha;
-            document.getElementById("captchaCode").textContent = captcha;
-        }
-
-        // Video boyutunu ayarla
-        function adjustVideo() {
-            const video = document.getElementById('bgVideo');
-            const container = document.querySelector('.video-background');
-            
-            if (video && container) {
-                const containerRatio = container.offsetWidth / container.offsetHeight;
-                const videoRatio = video.videoWidth / video.videoHeight;
-                
-                if (containerRatio > videoRatio) {
-                    video.style.width = 'auto';
-                    video.style.height = '100%';
-                } else {
-                    video.style.width = '100%';
-                    video.style.height = 'auto';
-                }
-                
-                video.style.left = '50%';
-                video.style.top = '50%';
-                video.style.transform = 'translate(-50%, -50%)';
-            }
-        }
-
-        // Giriş adımlarını güncelle
-        function updateSteps(activeStep) {
-            for (let i = 1; i <= 4; i++) {
-                const step = document.getElementById(`step${i}`);
-                if (i <= activeStep) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
+                    window.location.href=_0x4a2f[62];
+                }else{
+                    document[_0x4a2f[92]](_0x4a2f[31])[_0x4a2f[11]][_0x4a2f[10]]=_0x4a2f[10];
+                    setTimeout(()=>{
+                        document[_0x4a2f[92]](_0x4a2f[31])[_0x4a2f[11]][_0x4a2f[14]]('');
+                    },500);
+                    document[_0x4a2f[92]](_0x4a2f[31])[_0x4a2f[0]]='';
+                    alert(_0x4a2f[38]);
                 }
             }
-        }
 
-        // Email/şifre ekranına geri dön
-        function backToEmailPassword() {
-            document.getElementById("securityLayer").style.display = 'none';
-            document.getElementById("emailPasswordSection").style.display = 'block';
-            updateSteps(1);
-        }
+            function sendTwoFactorCode(){
+                currentState.twoFactorCode=Math.floor(100000+Math.random()*900000).toString();
+                currentState.twoFactorExpires=Date[_0x4a2f[35]]()+securityConfig.twoFactorTimeout;
+                console[_0x4a2f[113]](_0x4a2f[114]+currentState.twoFactorCode+_0x4a2f[118]+currentState.currentAdmin.phoneNumber);
+                alert(_0x4a2f[119]+currentState.twoFactorCode);
+            }
 
-        // Güvenlik sorusu ekranına geri dön
-        function backToSecurityQuestion() {
-            document.getElementById("twoFactorLayer").style.display = 'none';
-            document.getElementById("securityLayer").style.display = 'block';
-            updateSteps(2);
-        }
+            function handleFailedAttempt(){
+                currentState.failedAttempts++;
+                document[_0x4a2f[92]](_0x4a2f[4])[_0x4a2f[11]][_0x4a2f[10]]=_0x4a2f[10];
+                setTimeout(()=>{
+                    document[_0x4a2f[92]](_0x4a2f[4])[_0x4a2f[11]][_0x4a2f[14]]('');
+                },500);
+                document[_0x4a2f[92]](_0x4a2f[4])[_0x4a2f[0]]='';
+                document[_0x4a2f[92]](_0x4a2f[6])[_0x4a2f[0]]='';
+                generateCaptcha();
+                const remainingAttempts=securityConfig.maxAttempts-currentState.failedAttempts;
+                const warningElement=document[_0x4a2f[92]](_0x4a2f[39]);
+                const attemptsText=document[_0x4a2f[92]](_0x4a2f[41]);
+                if(remainingAttempts>0){
+                    attemptsText[_0x4a2f[9]]=_0x4a2f[42]+remainingAttempts;
+                    warningElement[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[40];
+                }else{
+                    currentState.blockedUntil=Date[_0x4a2f[35]]()+securityConfig.blockTime;
+                    showBlockedMessage();
+                }
+                logLoginActivity(false);
+            }
 
-        // Giriş aktivitesini logla (simülasyon)
-        function logLoginActivity(success) {
-            const now = new Date();
-            const logEntry = {
-                timestamp: now.toISOString(),
-                email: document.getElementById("email").value.trim(),
-                status: success ? "Başarılı" : "Başarısız",
-                userAgent: navigator.userAgent
-            };
-            
-            // Gerçek uygulamada bu veri sunucuya gönderilir
-            console.log("Giriş denemesi loglandı:", logEntry);
-        }
+            function showBlockedMessage(){
+                const remainingTime=Math.ceil((currentState.blockedUntil-Date[_0x4a2f[35]]())/60000);
+                alert(_0x4a2f[43]+remainingTime+_0x4a2f[44]);
+            }
+
+            function startNewSession(){
+                currentState.lastActivity=Date[_0x4a2f[35]]();
+                sessionStorage[_0x4a2f[55]](_0x4a2f[45],currentState.lastActivity.toString());
+                sessionStorage[_0x4a2f[55]](_0x4a2f[110],currentState.currentAdmin.email);
+            }
+
+            function checkSessionTimeout(){
+                if(currentState.lastActivity&&(Date[_0x4a2f[35]]()-currentState.lastActivity)>securityConfig.sessionTimeout){
+                    alert(_0x4a2f[46]);
+                    window.location.href=_0x4a2f[61];
+                }
+            }
+
+            function checkSession(){
+                const savedTime=sessionStorage[_0x4a2f[56]](_0x4a2f[45]);
+                if(savedTime){
+                    currentState.lastActivity=parseInt(savedTime);
+                    checkSessionTimeout();
+                }
+            }
+
+            function generateCaptcha(){
+                const chars="ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
+                let captcha="";
+                for(let i=0;i<6;i++){
+                    captcha+=chars.charAt(Math.floor(Math.random()*chars.length));
+                }
+                currentState.currentCaptcha=captcha;
+                document[_0x4a2f[92]](_0x4a2f[5])[_0x4a2f[9]]=captcha;
+            }
+
+            function adjustVideo(){
+                const video=document[_0x4a2f[92]](_0x4a2f[37]);
+                const container=document[_0x4a2f[38]](_0x4a2f[39]);
+                if(video&&container){
+                    const containerRatio=container[_0x4a2f[30]]/container[_0x4a2f[31]];
+                    const videoRatio=video[_0x4a2f[28]]/video[_0x4a2f[29]];
+                    if(containerRatio>videoRatio){
+                        video[_0x4a2f[21]][_0x4a2f[32]]=_0x4a2f[34];
+                        video[_0x4a2f[21]][_0x4a2f[33]]=_0x4a2f[35];
+                    }else{
+                        video[_0x4a2f[21]][_0x4a2f[32]]=_0x4a2f[35];
+                        video[_0x4a2f[21]][_0x4a2f[33]]=_0x4a2f[34];
+                    }
+                    video[_0x4a2f[21]][_0x4a2f[36]]=_0x4a2f[26];
+                    video[_0x4a2f[21]][_0x4a2f[27]]=_0x4a2f[26];
+                    video[_0x4a2f[21]][_0x4a2f[21]]=_0x4a2f[26];
+                }
+            }
+
+            function updateSteps(activeStep){
+                for(let i=1;i<=4;i++){
+                    const step=document[_0x4a2f[92]]("step"+i);
+                    if(i<=activeStep){
+                        step[_0x4a2f[11]][_0x4a2f[12]]=_0x4a2f[12];
+                    }else{
+                        step[_0x4a2f[11]][_0x4a2f[14]]='';
+                    }
+                }
+            }
+
+            function backToEmailPassword(){
+                document[_0x4a2f[92]](_0x4a2f[23])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[25];
+                document[_0x4a2f[92]](_0x4a2f[24])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[22];
+                updateSteps(1);
+            }
+
+            function backToSecurityQuestion(){
+                document[_0x4a2f[92]](_0x4a2f[26])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[25];
+                document[_0x4a2f[92]](_0x4a2f[23])[_0x4a2f[21]][_0x4a2f[22]]=_0x4a2f[22];
+                updateSteps(2);
+            }
+
+            function logLoginActivity(success){
+                const now=new Date();
+                const logEntry={
+                    timestamp:now.toISOString(),
+                    email:document[_0x4a2f[92]](_0x4a2f[2])[_0x4a2f[0]][_0x4a2f[7]](),
+                    status:success?_0x4a2f[120]:_0x4a2f[121],
+                    userAgent:navigator.userAgent
+                };
+                console[_0x4a2f[113]]("Giriş denemesi loglandı:",logEntry);
+            }
+
+            document[_0x4a2f[13]](_0x4a2f[84],function(){
+                checkSession();
+                document[_0x4a2f[92]](_0x4a2f[2])[_0x4a2f[13]](_0x4a2f[12],function(e){
+                    if(e[_0x4a2f[14]]===_0x4a2f[15])checkEmailPassword();
+                });
+                document[_0x4a2f[92]](_0x4a2f[4])[_0x4a2f[13]](_0x4a2f[12],function(e){
+                    if(e[_0x4a2f[14]]===_0x4a2f[15])checkEmailPassword();
+                });
+                document[_0x4a2f[92]](_0x4a2f[6])[_0x4a2f[13]](_0x4a2f[12],function(e){
+                    if(e[_0x4a2f[14]]===_0x4a2f[15])checkEmailPassword();
+                });
+                document[_0x4a2f[92]](_0x4a2f[28])[_0x4a2f[13]](_0x4a2f[12],function(e){
+                    if(e[_0x4a2f[14]]===_0x4a2f[15])checkSecurityAnswer();
+                });
+                document[_0x4a2f[92]](_0x4a2f[31])[_0x4a2f[13]](_0x4a2f[12],function(e){
+                    if(e[_0x4a2f[14]]===_0x4a2f[15])verifyTwoFactorCode();
+                });
+                adjustVideo();
+                window[_0x4a2f[13]](_0x4a2f[40],adjustVideo);
+                setInterval(checkSessionTimeout,60000);
+                generateCaptcha();
+            });
+        })();
     </script>
 </body>
 </html>
