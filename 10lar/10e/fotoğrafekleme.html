@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalıcı Fotoğraf Galerisi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalıcı Fotoğraf Galerisi</h1>
+        
+        <div class="input-area">
+            <h2>Fotoğraf Ekle</h2>
+            <input type="text" id="photo-path" placeholder="Fotoğraf dosya yolu (örn: images/foto.jpg veya ./foto.jpg)">
+            <div id="error-message" class="error"></div>
+            <div id="success-message" class="success hidden"></div>
+            <button id="add-photo">Fotoğraf Ekle</button>
+            <button id="add-folder" class="secondary">Klasörden Ekle</button>
+            <button id="save-gallery" class="delete">Galeriyi Kaydet</button>
+            <button id="clear-gallery" class="delete">Galeriyi Temizle</button>
+            <input type="file" id="folder-input" webkitdirectory directory multiple style="display: none;">
+        </div>
+        
+        <div class="gallery" id="photo-gallery">
+            <!-- Fotoğraflar buraya eklenecek -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
