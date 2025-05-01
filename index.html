@@ -13,7 +13,6 @@
             overflow: hidden;
         }
 
-        /* Mükemmel Ortalanmış Video Arka Plan */
         .video-background {
             position: fixed;
             top: 0;
@@ -37,7 +36,6 @@
             object-fit: cover;
         }
 
-        /* Şifre Modal Stilleri */
         .password-modal {
             display: flex;
             position: fixed;
@@ -115,232 +113,92 @@
             display: none !important;
         }
 
-        /* Ana İçerik Stilleri */
-        .main-content {
-            display: none;
-            position: relative;
-            min-height: 100vh;
-            padding: 40px 20px;
-            box-sizing: border-box;
-        }
-
-        .categories-container {
+        .security-info {
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            margin-top: 15px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             align-items: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            min-height: 80vh;
-        }
-
-        /* Ultra Modern Kutu Stilleri */
-        .kutu {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 16px;
-            width: 280px;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 25px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-            color: white;
-            position: relative;
-            overflow: hidden;
+            gap: 5px;
         }
 
-        .kutu::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.05) 0%,
-                rgba(255, 255, 255, 0.1) 50%,
-                rgba(255, 255, 255, 0.05) 100%
-            );
-            transform: rotate(45deg);
-            z-index: -1;
-            transition: all 0.6s ease;
-        }
-
-        .kutu:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .kutu:hover::before {
-            left: 100%;
-        }
-
-        .kutu h2 {
-            color: white;
-            margin: 15px 0 0;
-            font-size: 1.5em;
-            font-weight: 500;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
-            z-index: 1;
-            transition: all 0.3s;
-        }
-
-        .kutu:hover h2 {
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        .kutu .icon {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: rgba(255,255,255,0.9);
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            transition: all 0.4s;
-        }
-
-        .kutu:hover .icon {
-            transform: scale(1.15) rotate(5deg);
-            color: white;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Responsive Tasarım */
-        @media (max-width: 768px) {
-            .categories-container {
-                gap: 20px;
-                padding: 20px;
-            }
-            
-            .kutu {
-                width: 45%;
-                height: 180px;
-            }
-            
-            .kutu .icon {
-                font-size: 2.5rem;
-            }
+        .security-info i {
+            color: rgba(33, 150, 243, 0.9);
         }
 
         @media (max-width: 480px) {
-            .categories-container {
-                gap: 15px;
-                padding: 15px;
+            .password-box {
+                padding: 20px;
             }
             
-            .kutu {
-                width: 100%;
-                height: 160px;
+            .password-input {
+                width: 90%;
             }
             
-            .kutu h2 {
-                font-size: 1.3em;
-            }
-            
-            .kutu .icon {
-                font-size: 2.2rem;
+            .submit-btn {
+                width: 90%;
             }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Mükemmel Ortalanmış Video Arka Plan -->
     <div class="video-background">
         <video autoplay muted loop id="bgVideo">
             <source src="tema/MakimaChains4K.mp4" type="video/mp4">
         </video>
     </div>
 
-    <!-- Şifre Giriş Modalı -->
     <div class="password-modal" id="passwordModal">
         <div class="password-box">
-            <h2>Giriş Şifresi</h2>
+            <h2>Güvenli Giriş</h2>
             <input type="password" id="password" class="password-input" 
-                   placeholder="Şifreyi girin">
+                   placeholder="Güvenlik şifresini girin">
             <br>
             <button class="submit-btn" onclick="checkPassword()">Giriş Yap</button>
-        </div>
-    </div>
-
-    <!-- Ana İçerik (Başlangıçta Gizli) -->
-    <div id="mainContent" class="main-content">
-        <div class="categories-container">
-
-            <a href="9lar.html">
-                <div class="kutu">
-                    <i class="fas fa-folder icon"></i>
-                    <h2>9. Sınıflar</h2>
-                </div>
-            </a>
-
-            <a href="10lar.html">
-                <div class="kutu">
-                    <i class="fas fa-folder icon"></i>
-                    <h2>10. Sınıflar</h2>
-                </div>
-            </a>
-
-            <a href="11ler.html">
-                <div class="kutu">
-                    <i class="fas fa-folder icon"></i>
-                    <h2>11. Sınıflar</h2>
-                </div>
-            </a>
-
-
-            <a href="osi/index.html">
-                <div class="kutu">
-                    <i class="fas fa-folder icon"></i>
-                    <h2>12. Sınıflar</h2>
-                </div>
-            </a> 
-
-
-            <a href="ifsa2/index.html">
-                <div class="kutu">
-                    <i class="fas fa-folder icon"></i>
-                    <h2>Klasör 3</h2>
-                </div>
-
-                <a href="ifsa/index.html">
-                    <div class="kutu">
-                        <i class="fas fa-folder icon"></i>
-                        <h2>Klasör 1</h2>
-                    </div>
-                </a>
-            </a>
+            <div class="security-info">
+                <i class="fas fa-shield-alt"></i>
+                <span>Güvenli bağlantı - Girişler şifrelenmiştir</span>
+            </div>
         </div>
     </div>
 
     <script>
         // Doğru şifre (Bu değeri değiştirin)
         const correctPassword = "2kiloam";
+        let failedAttempts = 0;
+        const maxAttempts = 5;
+        let blockedUntil = 0;
 
         function checkPassword() {
+            const now = Date.now();
+            
+            // Eğer blokeli ise
+            if (now < blockedUntil) {
+                const remainingTime = Math.ceil((blockedUntil - now) / 1000);
+                alert(`Çok fazla deneme yaptınız. Lütfen ${remainingTime} saniye sonra tekrar deneyin.`);
+                return;
+            }
+
             const enteredPassword = document.getElementById("password").value;
             
             if(enteredPassword === correctPassword) {
-                document.getElementById("passwordModal").style.display = "none";
-                document.getElementById("mainContent").style.display = "block";
+                // Başarılı giriş
+                failedAttempts = 0;
+                window.location.href = "all.html";
             } else {
-                alert("Hatalı şifre! Lütfen tekrar deneyin.");
+                failedAttempts++;
                 document.getElementById("password").value = "";
+                
+                if (failedAttempts >= maxAttempts) {
+                    // 5 dakika blok
+                    blockedUntil = now + (5 * 60 * 1000);
+                    alert("Çok fazla hatalı deneme yaptınız. Güvenlik nedeniyle 5 dakika boyunca giriş yapamazsınız.");
+                } else {
+                    const remainingAttempts = maxAttempts - failedAttempts;
+                    alert(`Hatalı şifre! Kalan deneme hakkınız: ${remainingAttempts}`);
+                }
             }
         }
 
@@ -358,7 +216,7 @@
             }
         });
 
-        // Video boyutunu mükemmel şekilde ayarla
+        // Video boyutunu ayarla
         function adjustVideo() {
             const video = document.getElementById('bgVideo');
             const container = document.querySelector('.video-background');
@@ -373,13 +231,11 @@
                 video.style.height = 'auto';
             }
             
-            // Ekstra hizalama garantisi
             video.style.left = '50%';
             video.style.top = '50%';
             video.style.transform = 'translate(-50%, -50%)';
         }
 
-        // Video yüklendiğinde ve pencere boyutu değiştiğinde ayarla
         window.addEventListener('load', adjustVideo);
         window.addEventListener('resize', adjustVideo);
         document.getElementById('bgVideo').addEventListener('loadedmetadata', adjustVideo);
