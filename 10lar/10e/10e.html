@@ -9,24 +9,282 @@
 <body>
     <div class="container">
         <h1>Kalıcı Fotoğraf Galerisi</h1>
-        
-        <div class="input-area">
-            <h2>Fotoğraf Ekle</h2>
-            <input type="text" id="photo-path" placeholder="Fotoğraf dosya yolu (örn: images/foto.jpg veya ./foto.jpg)">
-            <div id="error-message" class="error"></div>
-            <div id="success-message" class="success hidden"></div>
-            <button id="add-photo">Fotoğraf Ekle</button>
-            <button id="add-folder" class="secondary">Klasörden Ekle</button>
-            <button id="save-gallery" class="delete">Galeriyi Kaydet</button>
-            <button id="clear-gallery" class="delete">Galeriyi Temizle</button>
-            <input type="file" id="folder-input" webkitdirectory directory multiple style="display: none;">
-        </div>
-        
         <div class="gallery" id="photo-gallery">
-            <!-- Fotoğraflar buraya eklenecek -->
+            <div class="photo-card">
+                <img src="IMG_1411.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1411.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1412.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1412.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1413.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1413.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1414.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1414.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1415.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1415.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1416.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1416.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1417.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1417.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1418.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1418.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1419.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1419.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1420.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1420.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1421.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1421.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1422.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1422.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1424.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1424.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1423.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1423.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1425.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1425.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1426.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1426.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1427.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1427.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1428.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1428.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1429.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1429.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1430.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1430.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1431.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1431.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1432.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1432.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1433.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1433.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1434.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1434.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1435.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1435.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1436.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1436.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1437.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1437.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1438.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1438.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1439.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1439.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1440.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1440.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1441.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1441.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1442.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1442.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1443.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1443.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1444.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1444.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1445.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1445.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1446.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1446.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_1447.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_1447.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        // Kayıtlı fotoğraf yolları
+        const photoPaths = ["IMG_1411.JPG","IMG_1412.JPG","IMG_1413.JPG","IMG_1414.JPG","IMG_1415.JPG","IMG_1416.JPG","IMG_1417.JPG","IMG_1418.JPG","IMG_1419.JPG","IMG_1420.JPG","IMG_1421.JPG","IMG_1422.JPG","IMG_1424.JPG","IMG_1423.JPG","IMG_1425.JPG","IMG_1426.JPG","IMG_1427.JPG","IMG_1428.JPG","IMG_1429.JPG","IMG_1430.JPG","IMG_1431.JPG","IMG_1432.JPG","IMG_1433.JPG","IMG_1434.JPG","IMG_1435.JPG","IMG_1436.JPG","IMG_1437.JPG","IMG_1438.JPG","IMG_1439.JPG","IMG_1440.JPG","IMG_1441.JPG","IMG_1442.JPG","IMG_1443.JPG","IMG_1444.JPG","IMG_1445.JPG","IMG_1446.JPG","IMG_1447.JPG"];
 
-    <script src="app.js"></script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById("photo-gallery");
+            
+            photoPaths.forEach(path => {
+                const photoCard = document.createElement("div");
+                photoCard.className = "photo-card";
+                photoCard.innerHTML = '<img src="' + path + '" alt="Galeri fotoğrafı"><div class="photo-info"><div class="photo-path">' + path + '</div><button class="delete-btn" onclick="this.parentNode.parentNode.remove()">×</button></div>';
+                gallery.appendChild(photoCard);
+            });
+        });
+    </script>
 </body>
 </html>
