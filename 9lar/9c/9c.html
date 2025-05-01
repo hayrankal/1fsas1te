@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalıcı Fotoğraf Galerisi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalıcı Fotoğraf Galerisi</h1>
+        
+        <div class="input-area">
+            <h2>Fotoğraf Ekle</h2>
+            <input type="text" id="photo-path" placeholder="Fotoğraf dosya yolu (örn: images/foto.jpg veya ./foto.jpg)">
+            <div id="error-message" class="error"></div>
+            <button id="add-photo">Fotoğraf Ekle</button>
+            <button id="save-gallery" class="delete">Galeriyi Kaydet</button>
+        </div>
+        
+        <div class="gallery" id="photo-gallery">
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0906.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0906.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0907.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0907.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0909.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0909.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0910.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0910.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0911.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0911.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0912.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0912.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0913.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0913.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0914.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0914.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0915.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0915.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0916.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0916.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0917.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0917.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0918.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0918.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0919.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0919.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0920.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0920.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0921.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0921.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0922.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0922.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0923.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0923.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0925.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0925.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0926.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0926.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0927.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0927.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0928.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0928.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0929.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0929.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0930.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0930.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0931.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0931.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0932.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0932.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0933.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0933.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0934.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0934.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0937.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0937.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0938.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0938.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0939.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0939.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0940.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0940.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0941.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0941.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0942.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0942.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0943.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0943.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0944.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0944.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0946.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0946.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0947.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9c\IMG_0947.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
