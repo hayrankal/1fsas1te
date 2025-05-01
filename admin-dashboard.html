@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            opacity: 0.8;
+            object-fit: cover;
+        }
+
+        .main-content {
+            position: relative;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+
+        .kutu {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            width: 280px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kutu::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.05) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0.05) 100%
+            );
+            transform: rotate(45deg);
+            z-index: -1;
+            transition: all 0.6s ease;
+        }
+
+        .kutu:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .kutu:hover::before {
+            left: 100%;
+        }
+
+        .kutu h2 {
+            color: white;
+            margin: 15px 0 0;
+            font-size: 1.5em;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            z-index: 1;
+            transition: all 0.3s;
+        }
+
+        .kutu:hover h2 {
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .kutu .icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: all 0.4s;
+        }
+
+        .kutu:hover .icon {
+            transform: scale(1.15) rotate(5deg);
+            color: white;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logout-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .categories-container {
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .kutu {
+                width: 45%;
+                height: 180px;
+            }
+            
+            .kutu .icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categories-container {
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .kutu {
+                width: 100%;
+                height: 160px;
+            }
+            
+            .kutu h2 {
+                font-size: 1.3em;
+            }
+            
+            .kutu .icon {
+                font-size: 2.2rem;
+            }
+            
+            .logout-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="admin/tema/köpek.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <button class="logout-btn" onclick="logout()" title="Çıkış Yap">
+        <i class="fas fa-sign-out-alt"></i>
+    </button>
+
+    <div class="main-content">
+        <div class="categories-container">
+            <a href="9lar.html">
+                <div class="kutu">
+                    <i class="fas fa-folder icon"></i>
+                    <h2>9. Sınıflar</h2>
+                </div>
+            </a>
+
+            <a href="10lar.html">
+                <div class="kutu">
+                    <i class="fas fa-folder icon"></i>
+                    <h2>10. Sınıflar</h2>
+                </div>
+            </a>
+
+            <a href="11ler.html">
+                <div class="kutu">
+                    <i class="fas fa-folder icon"></i>
+                    <h2>11. Sınıflar</h2>
+                </div>
+            </a>
+
+            <a href="12ler.html">
+                <div class="kutu">
+                    <i class="fas fa-folder icon"></i>
+                    <h2>12. Sınıflar</h2>
+                </div>
+            </a> 
+
+            <a href="ifsa2/index.html">
+                <div class="kutu">
+                    <i class="fas fa-folder icon"></i>
+                    <h2>Klasör 3</h2>
+                </div>
+            </a>
+
+            <a href="ifsa/index.html">
+                <div class="kutu">
+                    <i class="fas fa-folder icon"></i>
+                    <h2>Klasör 1</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+    <style>
+        .hidden-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255,255,255,0.2);
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .hidden-link:hover {
+            color: rgba(255,255,255,0.8);
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        // Çıkış fonksiyonu
+        function logout() {
+            if(confirm("Çıkış yapmak istediğinize emin misiniz?")) {
+                window.location.href = "index.html";
+            }
+        }
+
+        // Video boyutunu ayarla
+        function adjustVideo() {
+            const video = document.getElementById('bgVideo');
+            const container = document.querySelector('.video-background');
+            const containerRatio = container.offsetWidth / container.offsetHeight;
+            const videoRatio = video.videoWidth / video.videoHeight;
+            
+            if (containerRatio > videoRatio) {
+                video.style.width = 'auto';
+                video.style.height = '100%';
+            } else {
+                video.style.width = '100%';
+                video.style.height = 'auto';
+            }
+            
+            video.style.left = '50%';
+            video.style.top = '50%';
+            video.style.transform = 'translate(-50%, -50%)';
+        }
+
+        window.addEventListener('load', adjustVideo);
+        window.addEventListener('resize', adjustVideo);
+        document.getElementById('bgVideo').addEventListener('loadedmetadata', adjustVideo);
+    </script>
+</body>
+</html>
