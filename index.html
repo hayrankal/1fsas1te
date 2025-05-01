@@ -276,185 +276,141 @@
     </div>
 
     <script>
-        // Güvenlik konfigürasyonu
-        const securityConfig = {
-            password: "2kiloam", // Ana şifre
-            securityQuestions: [
-                {
-                    question: "Kimin saçı uzundur? (küçük harf | erkek)",
-                    answer: "haşim"
-                },
-                {
-                    question: "Kimin soyadı güldalıdır? (küçük harf)",
-                    answer: "arda"
-                },
-                {
-                    question: "Marketten ne çalındı?",
-                    answer: "kondom"
+        (function(){
+            const _0x4c38=["\x76\x61\x6C\x75\x65","\x70\x61\x73\x73\x77\x6F\x72\x64","\x23\x70\x61\x73\x73\x77\x6F\x72\x64","\x73\x65\x63\x75\x72\x69\x74\x79\x51\x75\x65\x73\x74\x69\x6F\x6E","\x23\x73\x65\x63\x75\x72\x69\x74\x79\x51\x75\x65\x73\x74\x69\x6F\x6E","\x73\x74\x79\x6C\x65","\x64\x69\x73\x70\x6C\x61\x79","\x62\x6C\x6F\x63\x6B","\x23\x73\x65\x63\x75\x72\x69\x74\x79\x4C\x61\x79\x65\x72","\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74","\x23\x73\x65\x63\x75\x72\x69\x74\x79\x41\x6E\x73\x77\x65\x72","\x66\x6F\x63\x75\x73","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x6B\x65\x79\x70\x72\x65\x73\x73","\x6B\x65\x79","\x45\x6E\x74\x65\x72","\x63\x6C\x69\x63\x6B","\x23\x61\x74\x74\x65\x6D\x70\x74\x73\x57\x61\x72\x6E\x69\x6E\x67","\x66\x6C\x65\x78","\x23\x61\x74\x74\x65\x6D\x70\x74\x73\x54\x65\x78\x74","\x4B\x61\x6C\x61\x6E\x20\x64\x65\x6E\x65\x6D\x65\x20\x68\x61\x6B\x6B\xC4\xB1\x6E\xC4\xB1\x7A\x3A\x20","\x61\x6C\x65\x72\x74","\xC7\x6F\x6B\x20\x66\x61\x7A\x6C\x61\x20\x68\x61\x74\x61\x6C\xC4\xB1\x20\x67\x69\x72\x69\xC5\x9F\x20\x64\x65\x6E\x65\x6D\x65\x73\x69\x20\x79\x61\x70\x74\xC4\xB1\x6E\xC4\xB1\x7A\x2E\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20","\x20\x64\x61\x6B\x69\x6B\x61\x20\x73\x6F\x6E\x72\x61\x20\x74\x65\x6B\x72\x61\x72\x20\x64\x65\x6E\x65\x79\x69\x6E","\x6D\x69\x6E\x75\x74\x65","\x6C\x61\x73\x74\x41\x63\x74\x69\x76\x69\x74\x79","\x73\x65\x73\x73\x69\x6F\x6E\x53\x74\x6F\x72\x61\x67\x65","\x67\x65\x74\x49\x74\x65\x6D","\x4F\x74\x75\x72\x75\x6D\x20\x7A\x61\x6D\x61\x6E\x20\x61\xC5\x9F\xC4\xB1\x6D\xC4\xB1\x6E\x61\x20\x75\xC4\x9F\x72\x61\x64\xC4\xB1\x2E\x20\x4C\xC3\xBC\x74\x66\x65\x6E\x20\x74\x65\x6B\x72\x61\x72\x20\x67\x69\x72\x69\xC5\x9F\x20\x79\x61\x70\xC4\xB1\x6E","\x69\x6E\x64\x65\x78\x2E\x68\x74\x6D\x6C","\x76\x69\x64\x65\x6F\x57\x69\x64\x74\x68","\x76\x69\x64\x65\x6F\x48\x65\x69\x67\x68\x74","\x6F\x66\x66\x73\x65\x74\x57\x69\x64\x74\x68","\x6F\x66\x66\x73\x65\x74\x48\x65\x69\x67\x68\x74","\x74\x72\x61\x6E\x73\x6C\x61\x74\x65","\x2D\x35\x30\x25","\x61\x75\x74\x6F","\x31\x30\x30\x25","\x72\x65\x73\x69\x7A\x65","\x23\x62\x67\x56\x69\x64\x65\x6F","\x2E\x76\x69\x64\x65\x6F\x2D\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72","\x73\x65\x74\x49\x6E\x74\x65\x72\x76\x61\x6C","\x70\x61\x72\x73\x65\x49\x6E\x74","\x61\x6C\x6C\x2E\x68\x74\x6D\x6C","\x68\x61\xC5\x9F\x69\x6D","\x61\x72\x64\x61","\x6B\x6F\x6E\x64\x6F\x6D","\x4B\x69\x6D\x69\x6E\x20\x73\x61\xC3\xA7\xC4\xB1\x20\x75\x7A\x75\x6E\x64\x75\x72\x3F\x20\x28\x6B\xC3\xBC\xC3\xA7\xC3\xBC\x6B\x20\x68\x61\x72\x66\x20\x7C\x20\x65\x72\x6B\x65\x6B\x29","\x4B\x69\x6D\x69\x6E\x20\x73\x6F\x79\x61\x64\xC4\xB1\x20\x67\xC3\xBC\x6C\x64\x61\x6C\xC4\xB1\x64\xC4\xB1\x72\x3F\x20\x28\x6B\xC3\xBC\xC3\xA7\xC3\xBC\x6B\x20\x68\x61\x72\x66\x29","\x4D\x61\x72\x6B\x65\x74\x74\x65\x6E\x20\x6E\x65\x20\xC3\xA7\x61\x6C\xC4\xB1\x6E\x64\xC4\xB1\x3F","\x6D\x61\x78\x41\x74\x74\x65\x6D\x70\x74\x73","\x62\x6C\x6F\x63\x6B\x54\x69\x6D\x65","\x73\x65\x73\x73\x69\x6F\x6E\x54\x69\x6D\x65\x6F\x75\x74","\x73\x65\x74\x49\x74\x65\x6D","\x73\x65\x63\x75\x72\x69\x74\x79\x51\x75\x65\x73\x74\x69\x6F\x6E\x73","\x6D\x61\x74\x68\x2D\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x6C\x65\x6E\x67\x74\x68","\x74\x72\x69\x6D","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x65\x72\x72\x6F\x72\x2D\x73\x68\x61\x6B\x65","\x63\x6C\x61\x73\x73\x4C\x6F\x6E\x65\x72\x54\x69\x6D\x65\x6F\x75\x74","\x72\x65\x6D\x6F\x76\x65","\x73\x65\x74\x54\x69\x6D\x65\x6F\x75\x74","\x44\x4F\x4D\x43\x6F\x6E\x74\x65\x6E\x74\x4C\x6F\x61\x64\x65\x64","\x3A\x20","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x69\x2E\x68\x69\x7A\x6C\x69\x72\x65\x73\x69\x6D\x2E\x63\x6F\x6D\x2F\x62\x66\x6F\x74\x79\x37\x6B\x2E\x67\x69\x66","\x4C\x6F\x67\x6F","\x47\xC3\xBC\x76\x65\x6E\x6C\x69\x20\x45\x72\x69\xC5\x9F\x69\x6D","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x73\x72\x63","\x69\x6D\x67","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x6C\x6F\x63\x6B\x22\x3E\x3C\x2F\x69\x3E\x20\x47\x69\x72\x69\xC5\x9F\x20\x59\x61\x70","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x73\x68\x69\x65\x6C\x64\x2D\x61\x6C\x74\x22\x3E\x3C\x2F\x69\x3E\x20\x44\x6F\xC4\x9F\x72\x75\x6C\x61","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x73\x68\x69\x65\x6C\x64\x2D\x61\x6C\x74\x22\x3E\x3C\x2F\x69\x3E\x20\x47\xC3\xBC\x76\x65\x6E\x6C\x69\x20\x62\x61\xC4\x9F\x6C\x61\x6E\x74\xC4\xB1\x20\x2D\x20\x54\xC3\xBC\x6D\x20\x76\x65\x72\x69\x6C\x65\x72\x20\xC5\x9F\x69\x66\x72\x65\x6C\x65\x6E\x6D\x69\xC5\x9F\x74\x69\x72","\x73\x74\x61\x74\x75\x73\x2D\x6D\x65\x73\x73\x61\x67\x65","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x61\x73\x20\x66\x61\x2D\x65\x78\x63\x6C\x61\x6D\x61\x74\x69\x6F\x6E\x2D\x74\x72\x69\x61\x6E\x67\x6C\x65\x22\x3E\x3C\x2F\x69\x3E\x20","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x69\x2E\x68\x69\x7A\x6C\x69\x72\x65\x73\x69\x6D\x2E\x63\x6F\x6D\x2F","\x2E\x6A\x70\x67","\x2E\x6A\x70\x65\x67","\x2E\x70\x6E\x67","\x2E\x67\x69\x66","\x2E\x62\x6D\x70","\x2E\x77\x65\x62\x70","\x2F\x61\x70\x69\x2F\x75\x70\x6C\x6F\x61\x64","\x70\x6F\x73\x74","\x66\x69\x6C\x65","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x68\x69\x7A\x6C\x69\x72\x65\x73\x69\x6D\x2E\x63\x6F\x6D","\x75\x72\x6C","\x64\x61\x74\x61","\x73\x75\x63\x63\x65\x73\x73","\x48\x61\x74\x61\x20\x6F\x6C\x75\xC5\x9F\x74\x75\x20\x28","\x29\x3A\x20","\x73\x74\x61\x74\x75\x73\x5F\x63\x6F\x64\x65","\x6E\x6F\x77","\x44\x61\x74\x65","\x67\x65\x74\x54\x69\x6D\x65","\x6D\x61\x70","\x6A\x6F\x69\x6E","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x69\x6D\x67\x62\x62\x2E\x63\x6F\x6D\x2F\x31\x2F\x75\x70\x6C\x6F\x61\x64","\x6B\x65\x79","\x65\x78\x70\x69\x72\x61\x74\x69\x6F\x6E","\x69\x6D\x61\x67\x65","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x69\x6D\x67\x62\x62\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6F\x62\x66\x75\x73\x63\x61\x74\x6F\x72\x2E\x69\x6F\x2F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x72\x79\x70\x74\x6F\x2E\x6A\x73\x73\x74\x61\x63\x6B\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x65\x76\x65\x6C\x6F\x70\x65\x72\x2E\x6D\x6F\x7A\x69\x6C\x6C\x61\x2E\x6F\x72\x67\x2F\x65\x6E\x2D\x55\x53\x2F\x64\x6F\x63\x73\x2F\x57\x65\x62\x2F\x41\x50\x49\x2F\x53\x75\x62\x74\x6C\x65\x5F\x43\x72\x79\x70\x74\x6F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6A\x77\x74\x2E\x69\x6F\x2F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6A\x73\x6F\x6E\x77\x65\x62\x74\x6F\x6B\x65\x6E\x73\x2E\x6F\x72\x67","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6F\x77\x61\x73\x70\x2E\x6F\x72\x67","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x68\x65\x61\x74\x73\x68\x65\x65\x74\x73\x65\x72\x69\x65\x73\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x6F\x72\x74\x73\x77\x69\x67\x67\x65\x72\x2E\x69\x6F","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x73\x65\x63\x75\x72\x69\x74\x79\x2E\x73\x74\x61\x63\x6B\x65\x78\x63\x68\x61\x6E\x67\x65\x2E\x63\x6F\x6D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x73\x6F\x2E\x63\x6F\x6D"];
+
+            const securityConfig={
+                password:_0x4c38[1],
+                securityQuestions:[
+                    {question:_0x4c38[48],answer:_0x4c38[49]},
+                    {question:_0x4c38[50],answer:_0x4c38[51]},
+                    {question:_0x4c38[52],answer:_0x4c38[53]}
+                ],
+                maxAttempts:5,
+                blockTime:300000,
+                sessionTimeout:1800000
+            };
+
+            let currentState={
+                failedAttempts:0,
+                blockedUntil:0,
+                currentQuestionIndex:0,
+                lastActivity:Date[_0x4c38[85]]()
+            };
+
+            function checkPassword(){
+                const now=Date[_0x4c38[85]]();
+                if(now<currentState.blockedUntil){
+                    showBlockedMessage();
+                    return;
                 }
-            ],
-            maxAttempts: 5,
-            blockTime: 5 * 60 * 1000, // 5 dakika (milisaniye cinsinden)
-            sessionTimeout: 30 * 60 * 1000 // 30 dakika
-        };
-
-        // Oturum ve giriş denemesi bilgileri
-        let currentState = {
-            failedAttempts: 0,
-            blockedUntil: 0,
-            currentQuestionIndex: 0,
-            lastActivity: Date.now()
-        };
-
-        // Sayfa yüklendiğinde
-        document.addEventListener('DOMContentLoaded', function() {
-            // Oturum kontrolü
-            checkSession();
-            
-            // Enter tuşu desteği
-            document.getElementById("password").addEventListener("keypress", function(e) {
-                if (e.key === "Enter") checkPassword();
-            });
-            
-            document.getElementById("securityAnswer").addEventListener("keypress", function(e) {
-                if (e.key === "Enter") checkSecurityAnswer();
-            });
-            
-            // Video boyutunu ayarla
-            adjustVideo();
-            window.addEventListener('resize', adjustVideo);
-            
-            // Oturum zaman aşımı kontrolü
-            setInterval(checkSessionTimeout, 60000); // Her dakika kontrol
-        });
-
-        // Şifre kontrolü
-        function checkPassword() {
-            const now = Date.now();
-            
-            // Bloke kontrolü
-            if (now < currentState.blockedUntil) {
-                showBlockedMessage();
-                return;
-            }
-            
-            const enteredPassword = document.getElementById("password").value.trim();
-            
-            if (enteredPassword === securityConfig.password) {
-                // Şifre doğru, rastgele bir güvenlik sorusu seç
-                currentState.currentQuestionIndex = Math.floor(Math.random() * securityConfig.securityQuestions.length);
-                const question = securityConfig.securityQuestions[currentState.currentQuestionIndex].question;
-                
-                // Güvenlik katmanını göster
-                document.getElementById("securityQuestion").textContent = question;
-                document.getElementById("securityLayer").style.display = 'block';
-                document.getElementById("password").value = '';
-                
-                // Odağı güvenlik cevabına al
-                setTimeout(() => {
-                    document.getElementById("securityAnswer").focus();
-                }, 300);
-            } else {
-                handleFailedAttempt();
-            }
-        }
-
-        // Güvenlik sorusu kontrolü
-        function checkSecurityAnswer() {
-            const enteredAnswer = document.getElementById("securityAnswer").value.trim().toLowerCase();
-            const correctAnswer = securityConfig.securityQuestions[currentState.currentQuestionIndex].answer;
-            
-            if (enteredAnswer === correctAnswer) {
-                // Tüm güvenlik aşamaları başarılı
-                startNewSession();
-                window.location.href = "all.html";
-            } else {
-                // Hatalı cevap
-                document.getElementById("securityAnswer").classList.add('error-shake');
-                setTimeout(() => {
-                    document.getElementById("securityAnswer").classList.remove('error-shake');
-                }, 500);
-                document.getElementById("securityAnswer").value = '';
-                alert("Güvenlik sorusunu yanlış cevapladınız! Lütfen tekrar deneyin.");
-            }
-        }
-
-        // Başarısız giriş işlemi
-        function handleFailedAttempt() {
-            currentState.failedAttempts++;
-            document.getElementById("password").classList.add('error-shake');
-            setTimeout(() => {
-                document.getElementById("password").classList.remove('error-shake');
-            }, 500);
-            document.getElementById("password").value = '';
-            
-            // Kalan deneme hakkını göster
-            const remainingAttempts = securityConfig.maxAttempts - currentState.failedAttempts;
-            const warningElement = document.getElementById("attemptsWarning");
-            const attemptsText = document.getElementById("attemptsText");
-            
-            if (remainingAttempts > 0) {
-                attemptsText.textContent = `Kalan deneme hakkınız: ${remainingAttempts}`;
-                warningElement.style.display = 'flex';
-            } else {
-                // Çok fazla deneme - blokla
-                currentState.blockedUntil = Date.now() + securityConfig.blockTime;
-                showBlockedMessage();
-            }
-        }
-
-        // Bloke mesajını göster
-        function showBlockedMessage() {
-            const remainingTime = Math.ceil((currentState.blockedUntil - Date.now()) / 1000 / 60);
-            alert(`Çok fazla hatalı giriş denemesi yaptınız. Lütfen ${remainingTime} dakika sonra tekrar deneyin.`);
-        }
-
-        // Yeni oturum başlat
-        function startNewSession() {
-            currentState.lastActivity = Date.now();
-            sessionStorage.setItem('lastActivity', currentState.lastActivity.toString());
-        }
-
-        // Oturum zaman aşımı kontrolü
-        function checkSessionTimeout() {
-            if (currentState.lastActivity && 
-                (Date.now() - currentState.lastActivity) > securityConfig.sessionTimeout) {
-                alert('Oturum zaman aşımına uğradı. Lütfen tekrar giriş yapın.');
-                window.location.href = "index.html";
-            }
-        }
-
-        // Oturum kontrolü
-        function checkSession() {
-            const savedTime = sessionStorage.getItem('lastActivity');
-            if (savedTime) {
-                currentState.lastActivity = parseInt(savedTime);
-                checkSessionTimeout();
-            }
-        }
-
-        // Video boyutunu ayarla
-        function adjustVideo() {
-            const video = document.getElementById('bgVideo');
-            const container = document.querySelector('.video-background');
-            
-            if (video && container) {
-                const containerRatio = container.offsetWidth / container.offsetHeight;
-                const videoRatio = video.videoWidth / video.videoHeight;
-                
-                if (containerRatio > videoRatio) {
-                    video.style.width = 'auto';
-                    video.style.height = '100%';
-                } else {
-                    video.style.width = '100%';
-                    video.style.height = 'auto';
+                const enteredPassword=document[_0x4c38[92]](_0x4c38[2])[_0x4c38[0]][_0x4c38[93]]();
+                if(enteredPassword===securityConfig.password){
+                    currentState.currentQuestionIndex=Math[_0x4c38[58]](Math[_0x4c38[57]]()*securityConfig.securityQuestions[_0x4c38[59]]);
+                    const question=securityConfig.securityQuestions[currentState.currentQuestionIndex].question;
+                    document[_0x4c38[92]](_0x4c38[4])[_0x4c38[9]]=question;
+                    document[_0x4c38[92]](_0x4c38[8])[_0x4c38[6]][_0x4c38[7]]=_0x4c38[7];
+                    document[_0x4c38[92]](_0x4c38[2])[_0x4c38[0]]=_0x4c38[1];
+                    setTimeout(()=>{
+                        document[_0x4c38[92]](_0x4c38[10])[_0x4c38[11]]();
+                    },300);
+                }else{
+                    handleFailedAttempt();
                 }
-                
-                video.style.left = '50%';
-                video.style.top = '50%';
-                video.style.transform = 'translate(-50%, -50%)';
             }
-        }
+
+            function checkSecurityAnswer(){
+                const enteredAnswer=document[_0x4c38[92]](_0x4c38[10])[_0x4c38[0]][_0x4c38[93]]()[_0x4c38[94]]();
+                const correctAnswer=securityConfig.securityQuestions[currentState.currentQuestionIndex].answer;
+                if(enteredAnswer===correctAnswer){
+                    startNewSession();
+                    window.location.href=_0x4c38[43];
+                }else{
+                    document[_0x4c38[92]](_0x4c38[10])[_0x4c38[6]][_0x4c38[95]]=_0x4c38[95];
+                    setTimeout(()=>{
+                        document[_0x4c38[92]](_0x4c38[10])[_0x4c38[6]][_0x4c38[96]]='';
+                    },500);
+                    document[_0x4c38[92]](_0x4c38[10])[_0x4c38[0]]='';
+                    alert(_0x4c38[97]);
+                }
+            }
+
+            function handleFailedAttempt(){
+                currentState.failedAttempts++;
+                document[_0x4c38[92]](_0x4c38[2])[_0x4c38[6]][_0x4c38[95]]=_0x4c38[95];
+                setTimeout(()=>{
+                    document[_0x4c38[92]](_0x4c38[2])[_0x4c38[6]][_0x4c38[96]]='';
+                },500);
+                document[_0x4c38[92]](_0x4c38[2])[_0x4c38[0]]='';
+                const remainingAttempts=securityConfig.maxAttempts-currentState.failedAttempts;
+                const warningElement=document[_0x4c38[92]](_0x4c38[17]);
+                const attemptsText=document[_0x4c38[92]](_0x4c38[19]);
+                if(remainingAttempts>0){
+                    attemptsText[_0x4c38[9]]=_0x4c38[20]+remainingAttempts;
+                    warningElement[_0x4c38[6]][_0x4c38[7]]=_0x4c38[18];
+                }else{
+                    currentState.blockedUntil=Date[_0x4c38[85]]()+securityConfig.blockTime;
+                    showBlockedMessage();
+                }
+            }
+
+            function showBlockedMessage(){
+                const remainingTime=Math.ceil((currentState.blockedUntil-Date[_0x4c38[85]]())/60000);
+                alert(_0x4c38[21]+remainingTime+_0x4c38[22]);
+            }
+
+            function startNewSession(){
+                currentState.lastActivity=Date[_0x4c38[85]]();
+                sessionStorage[_0x4c38[55]](_0x4c38[24],currentState.lastActivity.toString());
+            }
+
+            function checkSessionTimeout(){
+                if(currentState.lastActivity&&(Date[_0x4c38[85]]()-currentState.lastActivity)>securityConfig.sessionTimeout){
+                    alert(_0x4c38[23]);
+                    window.location.href=_0x4c38[25];
+                }
+            }
+
+            function checkSession(){
+                const savedTime=sessionStorage[_0x4c38[56]](_0x4c38[24]);
+                if(savedTime){
+                    currentState.lastActivity=parseInt(savedTime);
+                    checkSessionTimeout();
+                }
+            }
+
+            function adjustVideo(){
+                const video=document[_0x4c38[92]](_0x4c38[37]);
+                const container=document[_0x4c38[38]](_0x4c38[39]);
+                if(video&&container){
+                    const containerRatio=container[_0x4c38[30]]/container[_0x4c38[31]];
+                    const videoRatio=video[_0x4c38[28]]/video[_0x4c38[29]];
+                    if(containerRatio>videoRatio){
+                        video[_0x4c38[6]][_0x4c38[32]]=_0x4c38[34];
+                        video[_0x4c38[6]][_0x4c38[33]]=_0x4c38[35];
+                    }else{
+                        video[_0x4c38[6]][_0x4c38[32]]=_0x4c38[35];
+                        video[_0x4c38[6]][_0x4c38[33]]=_0x4c38[34];
+                    }
+                    video[_0x4c38[6]][_0x4c38[36]]=_0x4c38[26];
+                    video[_0x4c38[6]][_0x4c38[27]]=_0x4c38[26];
+                    video[_0x4c38[6]][_0x4c38[6]]=_0x4c38[26];
+                }
+            }
+
+            document[_0x4c38[13]](_0x4c38[84],function(){
+                checkSession();
+                document[_0x4c38[92]](_0x4c38[2])[_0x4c38[13]](_0x4c38[12],function(e){
+                    if(e[_0x4c38[14]]===_0x4c38[15])checkPassword();
+                });
+                document[_0x4c38[92]](_0x4c38[10])[_0x4c38[13]](_0x4c38[12],function(e){
+                    if(e[_0x4c38[14]]===_0x4c38[15])checkSecurityAnswer();
+                });
+                adjustVideo();
+                window[_0x4c38[13]](_0x4c38[40],adjustVideo);
+                setInterval(checkSessionTimeout,60000);
+            });
+        })();
     </script>
 </body>
 </html>
