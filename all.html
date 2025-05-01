@@ -262,7 +262,25 @@
             </a>
         </div>
     </div>
+    <a href="https://hedef-site.com" class="hidden-link" title="Gizli Link">Tristy</a>
 
+    <style>
+        .hidden-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255,255,255,0.2);
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .hidden-link:hover {
+            color: rgba(255,255,255,0.8);
+            transform: scale(1.1);
+        }
+    </style>
     <script>
         // Çıkış fonksiyonu
         function logout() {
