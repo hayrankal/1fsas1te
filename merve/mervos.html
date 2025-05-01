@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalıcı Fotoğraf Galerisi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalıcı Fotoğraf Galerisi</h1>
+        <div class="gallery" id="photo-gallery">
+            <div class="photo-card">
+                <img src="https://i.ibb.co/VWWJq3XJ/486989129-662044283089454-5217677042404869530-n.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/pjB8y0DK/64642691-0137-4dab-9c01-4f633350f3b36.webp" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/pjB8y0DK/64642691-0137-4dab-9c01-4f633350f3b36.webp" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/SXTcnvtv/ef4b7fa3-a1e4-4afd-9e28-99288c7e2510.webp" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/HLjzB2r1/fb090fe6-eba5-40a5-9888-ad3ef85a2218.webp" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/zhMj2kSp/indir-1.png" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/TMHxPS91/indir-3.png" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/Lz8Dt7Wk/indir-4.png" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/1J2nxDms/my-image.png" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/6JfLtNLq/photo-2025-03-29-18-55-54.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/3yxJ7r0K/photo-2025-03-30-18-13-43.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.ibb.co/vvvxRfL6/undressed-td-Gzl-Fyx1-KJu-ZALOIjtef.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById("photo-gallery");
+            
+            photoPaths.forEach(path => {
+                const photoCard = document.createElement("div");
+                photoCard.className = "photo-card";
+                photoCard.innerHTML = '<img src="' + path + '" alt="Galeri fotoğrafı"><div class="photo-info"><div class="photo-path">' + path + '</div><button class="delete-btn" onclick="this.parentNode.parentNode.remove()">×</button></div>';
+                gallery.appendChild(photoCard);
+            });
+        });
+    </script>
+</body>
+</html>
