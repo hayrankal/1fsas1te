@@ -4,282 +4,304 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalıcı Fotoğraf Galerisi</title>
-    <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-        
-        .input-area {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-right: 10px;
-            margin-top: 5px;
-        }
-        
-        button.delete {
-            background-color: #f44336;
-        }
-        
-        button.secondary {
-            background-color: #2196F3;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .photo-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-        
-        .photo-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .photo-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .photo-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background-color: #f9f9f9;
-        }
-        
-        .photo-path {
-            font-size: 12px;
-            color: #666;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            max-width: 80%;
-        }
-        
-        .delete-btn {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 0;
-        }
-        
-        .error {
-            color: #f44336;
-            margin: 10px 0;
-            min-height: 20px;
-        }
-        
-        .success {
-            color: #4CAF50;
-            margin: 10px 0;
-            min-height: 20px;
-        }
-        
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Kalıcı Fotoğraf Galerisi</h1>
-        
-        <div class="input-area">
-            <h2>Fotoğraf Ekle</h2>
-            <input type="text" id="photo-path" placeholder="Fotoğraf dosya yolu (örn: images/foto.jpg veya ./foto.jpg)">
-            <div id="error-message" class="error"></div>
-            <div id="success-message" class="success hidden"></div>
-            <button id="add-photo">Fotoğraf Ekle</button>
-            <button id="add-folder" class="secondary">Klasörden Ekle</button>
-            <button id="save-gallery" class="delete">Galeriyi Kaydet</button>
-            <button id="clear-gallery" class="delete">Galeriyi Temizle</button>
-            <input type="file" id="folder-input" webkitdirectory directory multiple style="display: none;">
-        </div>
-        
         <div class="gallery" id="photo-gallery">
-            <!-- Fotoğraflar buraya eklenecek -->
+            <div class="photo-card">
+                <img src="IMG_0949.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0949.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="C:\Users\tr4st\Desktop\Başlıyoruz\9lar\9d\IMG_0950.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0950.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0951.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0951.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0952.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0952.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0953.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0953.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0954.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0954.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0967.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0967.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0955.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0955.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0968.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0968.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0969.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0969.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0970.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0970.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0971.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0971.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0972.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0972.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0973.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0973.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0974.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0974.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0975.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0975.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0956.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0956.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0957.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0957.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0976.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0976.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0977.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0977.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0978.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0978.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0980.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0980.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0981.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0981.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0982.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0982.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0983.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0983.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0984.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0984.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0985.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0985.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0986.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0986.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0987.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0987.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0988.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0988.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0989.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0989.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0958.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0958.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0959.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0959.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0960.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0960.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0961.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0961.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0962.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0962.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0963.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0963.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0964.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0964.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0965.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0965.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_0966.JPG" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                    <div class="photo-path">IMG_0966.JPG</div>
+                    <button class="delete-btn">×</button>
+                </div>
+            </div>
         </div>
     </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const photoGallery = document.getElementById('photo-gallery');
-            const photoPathInput = document.getElementById('photo-path');
-            const addPhotoBtn = document.getElementById('add-photo');
-            const addFolderBtn = document.getElementById('add-folder');
-            const saveGalleryBtn = document.getElementById('save-gallery');
-            const clearGalleryBtn = document.getElementById('clear-gallery');
-            const errorMessage = document.getElementById('error-message');
-            const successMessage = document.getElementById('success-message');
-            const folderInput = document.getElementById('folder-input');
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById("photo-gallery");
             
-            // Galeriyi yükle
-            loadGallery();
-            
-            // Tek fotoğraf ekleme
-            addPhotoBtn.addEventListener('click', function() {
-                const path = photoPathInput.value.trim();
-                if (path) {
-                    addPhotoToGallery(path);
-                    photoPathInput.value = '';
-                    errorMessage.textContent = '';
-                    showSuccess('Fotoğraf başarıyla eklendi!');
-                    saveGallery();
-                } else {
-                    errorMessage.textContent = 'Lütfen geçerli bir dosya yolu girin.';
-                }
+            photoPaths.forEach(path => {
+                const photoCard = document.createElement("div");
+                photoCard.className = "photo-card";
+                photoCard.innerHTML = '<img src="' + path + '" alt="Galeri fotoğrafı"><div class="photo-info"><div class="photo-path">' + path + '</div><button class="delete-btn" onclick="this.parentNode.parentNode.remove()">×</button></div>';
+                gallery.appendChild(photoCard);
             });
-            
-            // Enter tuşu ile ekleme
-            photoPathInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    addPhotoBtn.click();
-                }
-            });
-            
-            // Klasörden ekleme
-            addFolderBtn.addEventListener('click', function() {
-                folderInput.value = ''; // Aynı klasörü tekrar seçebilmek için
-                folderInput.click();
-            });
-            
-            folderInput.addEventListener('change', function(e) {
-                const files = e.target.files;
-                if (files.length > 0) {
-                    let addedCount = 0;
-                    for (let file of files) {
-                        // Sadece resim dosyalarını ekle
-                        if (file.type.match('image.*')) {
-                            const path = file.webkitRelativePath ? file.webkitRelativePath.replace(/^[^\/]+\//, '') : file.name;
-                            addPhotoToGallery(path);
-                            addedCount++;
-                        }
-                    }
-                    showSuccess(`${addedCount} fotoğraf başarıyla eklendi!`);
-                    saveGallery();
-                }
-            });
-            
-            // Galeriyi kaydet butonu
-            saveGalleryBtn.addEventListener('click', function() {
-                saveGallery();
-                showSuccess('Galeri başarıyla kaydedildi!');
-            });
-            
-            // Galeriyi temizle butonu
-            clearGalleryBtn.addEventListener('click', function() {
-                if (confirm('Galeriyi tamamen temizlemek istediğinize emin misiniz? Bu işlem geri alınamaz.')) {
-                    photoGallery.innerHTML = '';
-                    localStorage.removeItem('photoGallery');
-                    showSuccess('Galeri temizlendi!');
-                }
-            });
-            
-            // Fotoğraf silme (delegasyon kullanarak)
-            photoGallery.addEventListener('click', function(e) {
-                if (e.target.classList.contains('delete-btn')) {
-                    if (confirm('Bu fotoğrafı silmek istediğinize emin misiniz?')) {
-                        e.target.closest('.photo-card').remove();
-                        saveGallery();
-                        showSuccess('Fotoğraf silindi!');
-                    }
-                }
-            });
-            
-            // Fotoğraf ekleme fonksiyonu
-            function addPhotoToGallery(path) {
-                // Aynı fotoğrafın tekrar eklenmesini önle
-                const existingPhotos = Array.from(document.querySelectorAll('.photo-path')).map(el => el.textContent);
-                if (existingPhotos.includes(path)) {
-                    errorMessage.textContent = 'Bu fotoğraf zaten galeride mevcut!';
-                    return;
-                }
-                
-                const photoCard = document.createElement('div');
-                photoCard.className = 'photo-card';
-                photoCard.innerHTML = `
-                    <img src="${path}" alt="Galeri fotoğrafı" onerror="this.parentNode.remove(); showError('Fotoğraf yüklenemedi: ${path}')">
-                    <div class="photo-info">
-                        <div class="photo-path">${path}</div>
-                        <button class="delete-btn" title="Sil">×</button>
-                    </div>
-                `;
-                photoGallery.appendChild(photoCard);
-            }
-            
-            // Galeriyi localStorage'a kaydet
-            function saveGallery() {
-                const photos = [];
-                document.querySelectorAll('.photo-card .photo-path').forEach(el => {
-                    photos.push(el.textContent);
-                });
-                localStorage.setItem('photoGallery', JSON.stringify(photos));
-            }
-            
-            // Galeriyi localStorage'dan yükle
-            function loadGallery() {
-                const savedPhotos = localStorage.getItem('photoGallery');
-                if (savedPhotos) {
-                    const photos = JSON.parse(savedPhotos);
-                    photos.forEach(path => {
-                        addPhotoToGallery(path);
-                    });
-                }
-            }
-            
-            // Başarı mesajı göster
-            function showSuccess(message) {
-                successMessage.textContent = message;
-                successMessage.classList.remove('hidden');
-                setTimeout(() => {
-                    successMessage.classList.add('hidden');
-                }, 3000);
-            }
-            
-            // Hata mesajı göster (img onerror için)
-            window.showError = function(message) {
-                errorMessage.textContent = message;
-                saveGallery(); // Hatalı fotoğraf silindiği için galeriyi güncelle
-            };
         });
     </script>
 </body>
