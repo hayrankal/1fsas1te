@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profil Analizi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --primary: #405DE6;
+            --secondary: #5851DB;
+            --purple: #833AB4;
+            --pink: #C13584;
+            --red: #E1306C;
+            --orange: #FD1D1D;
+            --yellow: #F56040;
+            --gradient: linear-gradient(45deg, var(--primary), var(--purple), var(--pink), var(--red), var(--orange), var(--yellow));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+            color: #262626;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .profiles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-pic-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .profile-header {
+            width: 100%;
+            height: 80px;
+            background: var(--gradient);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .profile-body {
+            padding: 0 20px 30px;
+            text-align: center;
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .profile-username {
+            color: #8e8e8e;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .profile-bio {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 0.9rem;
+            padding: 0 10px;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #8e8e8e;
+            margin-top: 5px;
+        }
+
+        .profile-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .profile-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(64, 93, 230, 0.3);
+        }
+
+        .verified-badge {
+            color: #3897f0;
+            margin-left: 5px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #8e8e8e;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .profiles-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hocaların Instagram Profil Analizi</h1>
+        </header>
+        <footer>
+            <p>Eş zamanlı olarak site güncellenmez | Ayda 1 kere güncellenecektir.</p>
+        </footer>
+        <div class="profiles-container">
+            <!-- Örnek Profil 1 - Merve Demirçay -->
+            <div class="profile-card">
+                <div class="profile-header"></div>
+                <div class="profile-pic-container">
+                    <img src="https://i.hizliresim.com/7utwk37.jpg" alt="Merve Demirçay" class="profile-pic">
+                </div>
+                <div class="profile-body">
+                    <h2 class="profile-name">Merve Demirçay <i class=""></i></h2>
+                    <p class="profile-username">@vemrvee</p>
+                    <p class="profile-bio">Gazi üniversitesi🎓 Uludağ üniversitesi YL🎓Matematik öğretmeni-MEB📍İstanbul</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Gönderi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">709</div>
+                            <div class="stat-label">Takipçi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">243</div>
+                            <div class="stat-label">Takip</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/vemrvee" target="_blank" class="profile-link">Profili Görüntüle</a>
+                </div>
+            </div>
+            
+            <!-- Örnek Profil 2 - Akasya Apaydın -->
+            <div class="profile-card">
+                <div class="profile-header"></div>
+                <div class="profile-pic-container">
+                    <img src="https://i.hizliresim.com/jxv003z.jpg" alt="Akasya Apaydın" class="profile-pic">
+                </div>
+                <div class="profile-body">
+                    <h2 class="profile-name">Akasya Apaydın</h2>
+                    <p class="profile-username">@akasyaapaydin</p>
+                    <p class="profile-bio">Marmara Üniversitesi 🏫 Coğrafya Öğretmeni 🌍 Marmara Üniversitesi yüksek lisans 81/43</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">99</div>
+                            <div class="stat-label">Gönderi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">891</div>
+                            <div class="stat-label">Takipçi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">905</div>
+                            <div class="stat-label">Takip</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/akasyaapaydin" target="_blank" class="profile-link">Profili Görüntüle</a>
+                </div>
+            </div>
+            
+            <!-- Örnek Profil 3 - Aslı Kara Erbay -->
+            <div class="profile-card">
+                <div class="profile-header"></div>
+                <div class="profile-pic-container">
+                    <img src="https://i.hizliresim.com/pjlu887.jpg" alt="Aslı Kara Erbay" class="profile-pic">
+                </div>
+                <div class="profile-body">
+                    <h2 class="profile-name">Aslı Kara Erbay <i class=""></i></h2>
+                    <p class="profile-username">@asliikr</p>
+                    <p class="profile-bio"></p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">31</div>
+                            <div class="stat-label">Gönderi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">410</div>
+                            <div class="stat-label">Takipçi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">443</div>
+                            <div class="stat-label">Takip</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/asliikr" target="_blank" class="profile-link">Profili Görüntüle</a>
+                </div>
+            </div>
+            
+            <!-- Örnek Profil 4 - Gülseren ATAMER -->
+            <div class="profile-card">
+                <div class="profile-header"></div>
+                <div class="profile-pic-container">
+                    <img src="https://i.hizliresim.com/ifzo9c8.jpg" alt="Gülseren ATAMER" class="profile-pic">
+                </div>
+                <div class="profile-body">
+                    <h2 class="profile-name">Gülseren ATAMER</h2>
+                    <p class="profile-username">@atamergulseren</p>
+                    <p class="profile-bio">DKAB Ögretmeni 📝
+                        MEB🇹🇷
+                        İslam,ilim,şiir, ve hayata dair değerler üzerine...</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">250</div>
+                            <div class="stat-label">Gönderi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">397</div>
+                            <div class="stat-label">Takipçi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">1067</div>
+                            <div class="stat-label">Takip</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/atamergulseren" target="_blank" class="profile-link">Profili Görüntüle</a>
+                </div>
+            </div>
+            
+            <!-- Örnek Profil 5 - Elif Arslan -->
+            <div class="profile-card">
+                <div class="profile-header"></div>
+                <div class="profile-pic-container">
+                    <img src="https://i.hizliresim.com/okj1d3k.jpg" alt="Beyza Günbay" class="profile-pic">
+                </div>
+                <div class="profile-body">
+                    <h2 class="profile-name">Beyza Günbay<i class=""></i></h2>
+                    <p class="profile-username">@byzgunbay</p>
+                    <p class="profile-bio">30.01.16💍|
+                        Öykü Zümra🌸|
+                        Ayliz🌸|
+                        BİYOLOJİ ÖGRETMENİ🍀🌿</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Gönderi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">476</div>
+                            <div class="stat-label">Takipçi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">1422</div>
+                            <div class="stat-label">Takip</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/byzgunbay" target="_blank" class="profile-link">Profili Görüntüle</a>
+                </div>
+            </div>
+            
+            <!-- Örnek Profil 6 - İlke Aksoy -->
+            <div class="profile-card">
+                <div class="profile-header"></div>
+                <div class="profile-pic-container">
+                    <img src="https://i.hizliresim.com/tkpjo7d.jpg" alt="İlke Aksoy" class="profile-pic">
+                </div>
+                <div class="profile-body">
+                    <h2 class="profile-name">İlke Aksoy</h2>
+                    <p class="profile-username">@ilke.aksy</p>
+                    <p class="profile-bio">İnci 🩰 珍珠 #0808 🌈|
+                        English Teacher 👩🏻‍🏫</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">143</div>
+                            <div class="stat-label">Gönderi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">983</div>
+                            <div class="stat-label">Takipçi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">1150</div>
+                            <div class="stat-label">Takip</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/ilke.aksy" target="_blank" class="profile-link">Profili Görüntüle</a>
+                </div>
+            </div>          
+            <!-- Örnek Profil 6 - Hilal Çakıroğlu -->
+            <div class="profile-card">
+                <div class="profile-header"></div>
+                <div class="profile-pic-container">
+                    <img src="https://i.hizliresim.com/emqhtiv.jpg" alt="Hilal Çakıroğlu" class="profile-pic">
+                </div>
+                <div class="profile-body">
+                    <h2 class="profile-name">Hilal Çakıroğlu</h2> <i class="fas fa-check-circle verified-badge"></i></h2>
+                    <p class="profile-username">@hilal__cakiroglu</p>
+                    <p class="profile-bio">Öğretmen/Yazar|
+                        “İnsanlar karşımıza kendimizi daha iyi tanımamız için çıkarlar.”|
+                        🍃|</p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">158</div>
+                            <div class="stat-label">Gönderi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2805</div>
+                            <div class="stat-label">Takipçi</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">641</div>
+                            <div class="stat-label">Takip</div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/hilal__cakiroglu" target="_blank" class="profile-link">Profili Görüntüle</a>
+                </div>
+
+                
+            </div>
+        </div>
+        <footer>
+            <p>© 2025 Instagram Profil Analizi. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+</body>
+</html>
