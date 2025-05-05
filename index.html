@@ -9,6 +9,7 @@
             --primary-color: #2196F3;
             --error-color: #f44336;
             --success-color: #4CAF50;
+            --update-color: #0051ff;
         }
         
         * {
@@ -172,6 +173,47 @@
             animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
         }
 
+        .updates-container {
+            margin-top: 30px;
+            background: rgba(255, 152, 0, 0.1);
+            border-left: 3px solid var(--update-color);
+            border-radius: 6px;
+            padding: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .updates-title {
+            color: var(--update-color);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-item {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .update-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .update-date {
+            color: var(--update-color);
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+
         @keyframes shake {
             10%, 90% { transform: translateX(-2px); }
             20%, 80% { transform: translateX(3px); }
@@ -221,6 +263,11 @@
             .input-field, .btn {
                 padding: 12px 14px;
             }
+            
+            .updates-container {
+                padding: 12px;
+                max-height: 150px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -228,14 +275,14 @@
 <body>
     <div class="video-background">
         <video autoplay muted loop id="bgVideo">
-            <source src="tema/MakimaChains4K.mp4" type="video/mp4">
+            <source src="tema/wallpaperflare.com_wallpaper.mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="login-container">
         <div class="auth-box" id="authBox">
             <div class="logo">
-                <img src="https://i.hizliresim.com/bfoty7k.gif" alt="Logo">
+                <img src="tema/6000-goofy-ahh-blue-guy-emoji.png" alt="Logo">
                 <h1>Güvenli Erişim</h1>
             </div>
             
@@ -266,6 +313,19 @@
                 <button class="btn" onclick="checkSecurityAnswer()">
                     <i class="fas fa-shield-alt"></i> Doğrula
                 </button>
+            </div>
+            
+            <!-- Güncelleme Duyuruları Bölümü -->
+            <div class="updates-container">
+                <div class="updates-title">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>SON GÜNCELLEMELER</span>
+                </div>
+                
+                <div class="update-item">
+                    <span class="update-date">[5.05.2025]</span>
+                    "Hocaların İnstaları" Kategorisi Eklendi.
+                </div>
             </div>
             
             <div class="status-message">
