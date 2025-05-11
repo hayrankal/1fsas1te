@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merve Demirçay - İnstagram Eski Profil Fotoğrafları</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+            <footer>
+            <p>Eğer Elinizde Burada Olmayan Fotoğraf Varsa Özelden Ulaşıp Ekletebilirsiniz.</p>
+        </footer>
+    <div class="container">
+        <h1>Merve Demirçay - İnstagram Eski Profil Fotoğrafları</h1>
+        <div class="gallery" id="photo-gallery">
+            <div class="photo-card">
+                <img src="https://i.hizliresim.com/64ltnla.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="https://i.hizliresim.com/et7imwm.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                </div>
+            </div>
+                        <div class="photo-card">
+                <img src="https://i.hizliresim.com/5apwwbx.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                </div>
+            </div>
+                        <div class="photo-card">
+                <img src="https://i.hizliresim.com/sagd42s.png" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                </div>
+            </div>
+                                    <div class="photo-card">
+                <img src="https://i.hizliresim.com/l2jp1tv.jpg" alt="Galeri fotoğrafı">
+                <div class="photo-info">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById("photo-gallery");
+            
+            photoPaths.forEach(path => {
+                const photoCard = document.createElement("div");
+                photoCard.className = "photo-card";
+                photoCard.innerHTML = '<img src="' + path + '" alt="Galeri fotoğrafı"><div class="photo-info"><div class="photo-path">' + path + '</div><button class="delete-btn" onclick="this.parentNode.parentNode.remove()">×</button></div>';
+                gallery.appendChild(photoCard);
+            });
+        });
+    </script>
+</body>
+</html>
