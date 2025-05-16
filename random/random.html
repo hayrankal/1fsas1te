@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoğraf & Video Galerisi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #eee;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .media-card {
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .media-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+        .media-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .media-card:hover .media-container img,
+        .media-card:hover .media-container video {
+            transform: scale(1.1);
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(231, 76, 60, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            opacity: 0;
+            z-index: 2;
+        }
+        .media-card:hover .delete-btn {
+            opacity: 1;
+        }
+        .delete-btn:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+        .upload-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .upload-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        /* Zoom modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-content img,
+        .modal-content video {
+            max-width: 100%;
+            max-height: 90vh;
+            display: block;
+            margin: 0 auto;
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fotoğraf & Video Galerisi</h1>
+    
+        <div class="gallery" id="media-gallery">
+            <!-- Medya öğeleri buraya eklenecek -->
+        </div>
+    </div>
+
+    <!-- Zoom modal -->
+    <div class="modal" id="media-modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-content" id="modal-content"></div>
+    </div>
+
+    <script>
+        // Medya dosyaları (fotoğraf ve videolar)
+        const mediaFiles = [
+            { path: "WhatsApp Görsel 2025-05-16 saat 15.22.46_5809bcec.jpg", type: "image" },
+            { path: "WhatsApp Görsel 2025-05-15 saat 12.01.12_b85a0e0a.jpg", type: "image" },
+            { path: "WhatsApp Video 2025-05-16 saat 15.26.31_f9e5756b.mp4", type: "video" }
+        ];
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById("media-gallery");
+            
+            // Mevcut medyaları yükle
+            mediaFiles.forEach(file => {
+                addMediaToGallery(file.path, file.type);
+            });
+
+            // Dosya yükleme işlemi
+            document.getElementById('file-input').addEventListener('change', function(e) {
+                const files = e.target.files;
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const fileType = file.type.startsWith('video/') ? 'video' : 'image';
+                    
+                    // Yeni dosyayı listeye ekle
+                    mediaFiles.push({
+                        path: file.name,
+                        type: fileType
+                    });
+                    
+                    // Galeriye ekle
+                    addMediaToGallery(file.name, fileType);
+                }
+            });
+        });
+
+        function addMediaToGallery(path, type) {
+            const gallery = document.getElementById("media-gallery");
+            const mediaCard = document.createElement("div");
+            mediaCard.className = "media-card";
+            
+            let mediaContent;
+            if (type === 'video') {
+                mediaContent = `<video src="${path}"></video>`;
+            } else {
+                mediaContent = `<img src="${path}" alt="Galeri medyası">`;
+            }
+            
+            mediaCard.innerHTML = `
+                <div class="media-container">
+                    ${mediaContent}
+                </div>
+                <button class="delete-btn" onclick="deleteMedia(this)">×</button>
+            `;
+            
+            // Tıklanınca zoom yap
+            mediaCard.addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-btn')) return;
+                openModal(path, type);
+            });
+            
+            gallery.appendChild(mediaCard);
+        }
+
+        function deleteMedia(btn) {
+            btn.parentElement.remove();
+            event.stopPropagation(); // Zoom fonksiyonunu tetiklemesin
+        }
+
+        function openModal(path, type) {
+            const modal = document.getElementById("media-modal");
+            const modalContent = document.getElementById("modal-content");
+            
+            if (type === 'video') {
+                modalContent.innerHTML = `
+                    <video controls autoplay>
+                        <source src="${path}" type="video/mp4">
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                `;
+            } else {
+                modalContent.innerHTML = `<img src="${path}" alt="Büyütülmüş medya">`;
+            }
+            
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Sayfa kaydırmayı engelle
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("media-modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Sayfa kaydırmayı geri aç
+            
+            // Videoyu durdur
+            const videos = modal.getElementsByTagName('video');
+            for (let video of videos) {
+                video.pause();
+            }
+        }
+
+        // ESC tuşuyla kapat
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
