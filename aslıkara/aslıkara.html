@@ -135,10 +135,7 @@
 <body>
     <div class="container">
         <h1>Fotoğraf & Video Galerisi</h1>
-        
-        <button class="upload-btn" onclick="document.getElementById('file-input').click()">
-            Yeni Medya Ekle
-        </button>
+
         <input type="file" id="file-input" multiple accept="image/*,video/*" style="display: none;">
         
         <div class="gallery" id="media-gallery">
@@ -151,7 +148,9 @@
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <div class="modal-content" id="modal-content"></div>
     </div>
-
+<button class="upload-btn" onclick="window.location.href='videodançıkanlar/videoss.html'">
+    Videodan SS
+</button>
     <script>
         // Medya dosyaları (fotoğraf ve videolar)
         const mediaFiles = [
@@ -186,8 +185,8 @@
             { path: "VID_20170608_131340.mp4", type: "video" },
             { path: "WhatsApp Video 2025-05-15 saat 13.45.38_1f2d61f9.mp4", type: "video" },
             { path: "VID_20170614_113149.mp4", type: "video" }
+            
         ];
-
         document.addEventListener("DOMContentLoaded", function() {
             const gallery = document.getElementById("media-gallery");
             
